@@ -15,7 +15,92 @@
       <use href="/__spritemap#sprite-user"></use>
     </svg> -->
     <!-- примеры требуемых атрибутов data-test="*" -->
-    <div data-test="hero">hero</div>
+
+    <header class="header" data-test="hero">
+      <div class="header__container">
+
+        <div class="header__content">
+          <div class="header__logo-container">
+            <img class="header__logo logo" src="/__spritemap#sprite-logo-view" alt="Логотип Internship" width="30" height="30">
+          </div>
+
+          <div class="header__button-container">
+            <span class="header__button-text">меню</span>
+
+            <button class="header__button toggle-burger" type="button">
+              <span class="visually-hidden">Открыть меню</span>
+              <span class="toggle-burger__line1"></span>
+              <span class="toggle-burger__line2"></span>
+              <span class="toggle-burger__line3"></span>
+            </button>
+          </div>
+
+          <ul class="header__menu">
+            <li class="header__item">
+              <a class="header__link" href="#">О проекте</a>
+            </li>
+
+            <li class="header__item header__item--submenu">
+              <a class="header__link" href="#">Программы</a>
+
+              <ul class="header__submenu">
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Стажировки</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Волонтёрство</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Учёба</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Религия</a>
+                </li>
+              </ul>
+
+            </li>
+
+            <li class="header__item">
+              <a class="header__link" href="#">как поехать</a>
+            </li>
+
+            <li class="header__item">
+              <a class="header__link" href="#">отзывы</a>
+            </li>
+
+            <li class="header__item header__item--submenu">
+              <a class="header__link" href="#">новости</a>
+
+              <ul class="header__submenu">
+                <li class="header__subitem">
+                  <a class="header__link" href="#">путешествия</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">интервью</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Карьера</a>
+                </li>
+              </ul>
+
+            </li>
+
+            <li class="header__item">
+              <a class="header__link" href="#">контакты</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </header>
+
     <div data-test="about">about</div>
     <div data-test="programs">programs</div>
     <div data-test="grant">grant</div>
