@@ -5,6 +5,12 @@
 @import "./common/fonts";
 @import "./common/visually-hidden";
 
+/* BLOCKS */
+
+@import "./blocks/header";
+@import "./blocks/logo";
+@import "./blocks/toggle-burger";
+
 /* VENDOR */
 
 @import "vendor/normalize";
