@@ -24,7 +24,31 @@
 }
 
 .header__menu {
+  @include list-resseting;
+
+  position: absolute;
+  top: 78px;
   display: none;
+  width: calc(100% - 30px);
+  padding: 31px 25px;
+  border-radius: 16px;
+  background-color: $primary;
+}
+
+.header__menu--open {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.header__submenu {
+  @include list-resseting;
+
+  position: relative;
+  display: flex;
+  padding: 10px 0 0 16px;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .header__button-container:not(.header__button-container--open):hover .header__line {
@@ -50,7 +74,6 @@
   &--open {
     position: absolute;
     top: 20px;
-    // width: 290px;
     width: calc(100% - 30px);
     background-color: $primary;
     transition: width 0.3s, background-color 0.3s;
@@ -71,4 +94,38 @@
   color: $primary;
   text-transform: uppercase;
   transition: color 0.3s;
+}
+
+.header__item .header__link {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: $white;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.header__subitem .header__link {
+  letter-spacing: normal;
+  text-transform: capitalize;
+  opacity: 0.6;
+}
+
+.header__item--submenu > .header__link {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: -24px;
+    width: 8px;
+    height: 8px;
+    transform-origin: 0 0;
+    rotate: -135deg;
+    border-top: 1px solid $white;
+    border-left: 1px solid $white;
+  }
 }
