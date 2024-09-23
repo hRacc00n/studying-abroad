@@ -47,6 +47,7 @@
   padding: 31px 25px;
   opacity: 1;
   transition: width 0.3s, opacity 0.3s;
+  z-index: 3;
 }
 
 .header__button-container:not(.header__button-container--open):hover .header__line {
@@ -75,6 +76,7 @@
     width: calc(100% - 30px);
     background-color: $primary;
     transition: width 0.3s, background-color 0.3s;
+    z-index: 3;
   }
 }
 
