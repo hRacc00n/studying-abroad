@@ -19,6 +19,11 @@
     min-height: 1024px;
     padding: 110px 64px 60px 45px;
   }
+
+  @media ($desktop) {
+    min-height: 800px;
+    padding: 110px 372px 60px 100px;
+  }
 }
 
 .hero__swiper-slide--experience {
@@ -39,6 +44,18 @@
         url("../../img/hero/experience-tablet@2x.webp") type("image/webp") 2x,
         url("../../img/hero/experience-tablet@1x.jpg") type("image/jpeg") 1x,
         url("../../img/hero/experience-tablet@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media ($desktop) {
+    background:
+      image-set(
+        url("../../img/hero/experience-desktop@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/experience-desktop@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/experience-desktop@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/experience-desktop@2x.jpg") type("image/jpeg") 2x
       );
     background-repeat: no-repeat;
     background-size: cover;
@@ -67,6 +84,18 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  @media ($tablet) {
+    background:
+      image-set(
+        url("../../img/hero/volunteering-desktop@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/volunteering-desktop@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/volunteering-desktop@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/volunteering-desktop@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .hero__swiper-slide--internship {
@@ -87,6 +116,18 @@
         url("../../img/hero/internship-tablet@2x.webp") type("image/webp") 2x,
         url("../../img/hero/internship-tablet@1x.jpg") type("image/jpeg") 1x,
         url("../../img/hero/internship-tablet@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media ($desktop) {
+    background:
+      image-set(
+        url("../../img/hero/internship-desktop@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/internship-desktop@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/internship-desktop@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/internship-desktop@2x.jpg") type("image/jpeg") 2x
       );
     background-repeat: no-repeat;
     background-size: cover;
@@ -144,6 +185,12 @@
     line-height: 1.22;
     border-radius: 0 30px 30px 0;
   }
+
+  @media ($desktop) {
+    padding: 40px 69px 30px 50px;
+    font-size: 54px;
+    line-height: 1.15;
+  }
 }
 
 .hero__swiper-slide p {
@@ -164,6 +211,12 @@
     font-size: 16px;
     border-radius: 0 0 30px 30px;
   }
+
+  @media ($desktop) {
+    max-width: 89%;
+    padding: 1px 266px 34px 50px;
+    line-height: 1.62;
+  }
 }
 
 .hero__swiper-slide p br {
@@ -176,6 +229,10 @@
   @media ($tablet) {
     position: relative;
     max-width: 90%;
+  }
+
+  @media ($desktop) {
+    min-width: 775px;
   }
 }
 
@@ -191,6 +248,11 @@
     right: 25px;
     max-width: 228px;
     background-color: transparent;
+  }
+
+  @media ($desktop) {
+    top: 0;
+    right: 131px;
   }
 }
 
@@ -246,5 +308,9 @@
     &::after {
       right: 22px;
     }
+  }
+
+  @media ($desktop) {
+    padding: 21px 80px 21px 30px;
   }
 }
