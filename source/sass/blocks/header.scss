@@ -2,6 +2,10 @@
   position: relative;
   min-height: 568px;
   margin: 0 auto;
+
+  @media ($tablet) {
+    min-height: 1024px;
+  }
 }
 
 .header__content {
@@ -28,15 +32,24 @@
   overflow: hidden;
   opacity: 0;
   transition: width 0.3s, opacity 0.3s ease 0.1s, padding 0.3s;
+
+  @media ($tablet) {
+    top: 88px;
+    right: 45px;
+  }
 }
 
 .header__menu--open {
   right: 15px;
-  width: calc(100% - 30px);
+  width: 290px;
   padding: 31px 25px;
   opacity: 1;
   transition: width 0.3s, opacity 0.3s;
   z-index: 3;
+
+  @media ($tablet) {
+    right: 45px;
+  }
 }
 
 .header__button-container:not(.header__button-container--open):hover .header__line {
@@ -62,10 +75,15 @@
   &--open {
     position: absolute;
     top: 20px;
-    width: calc(100% - 30px);
+    width: 290px;
     background-color: $primary;
     transition: width 0.3s, background-color 0.3s;
     z-index: 3;
+  }
+
+  @media ($tablet) {
+    top: 31px;
+    right: 45px;
   }
 }
 
@@ -160,4 +178,9 @@
   position: absolute;
   top: 21px;
   left: 15px;
+
+  @media ($tablet) {
+    top: 32px;
+    left: 45px;
+  }
 }

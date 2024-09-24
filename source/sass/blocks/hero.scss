@@ -13,6 +13,12 @@
   flex-direction: column;
   justify-content: end;
   align-items: start;
+
+  @media ($tablet) {
+    position: relative;
+    min-height: 1024px;
+    padding: 110px 64px 60px 45px;
+  }
 }
 
 .hero__swiper-slide--experience {
@@ -25,6 +31,18 @@
     );
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media ($tablet) {
+    background:
+      image-set(
+        url("../../img/hero/experience-tablet@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/experience-tablet@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/experience-tablet@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/experience-tablet@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .hero__swiper-slide--volunteering {
@@ -37,6 +55,18 @@
     );
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media ($tablet) {
+    background:
+      image-set(
+        url("../../img/hero/volunteering-tablet@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/volunteering-tablet@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/volunteering-tablet@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/volunteering-tablet@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .hero__swiper-slide--internship {
@@ -49,6 +79,18 @@
     );
   background-repeat: no-repeat;
   background-size: cover;
+
+  @media ($tablet) {
+    background:
+      image-set(
+        url("../../img/hero/internship-tablet@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/internship-tablet@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/internship-tablet@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/internship-tablet@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .hero__paginations {
@@ -59,6 +101,11 @@
   gap: 12px;
   background-color: $white;
   border-radius: 12px 12px 0 0;
+
+  @media ($tablet) {
+    padding: 8px 20px 10px;
+    border-radius: 20px 20px 0 0;
+  }
 }
 
 .hero__pagination-button {
@@ -74,6 +121,11 @@
     background-color: $state-active;
     border-color: $state-active;
   }
+
+  @media ($tablet) {
+    width: 12px;
+    height: 12px;
+  }
 }
 
 .hero__title {
@@ -85,6 +137,13 @@
   color: $primary;
   background-color: $white;
   border-radius: 0 16px 16px 0;
+
+  @media ($tablet) {
+    padding: 31px 69px 23px 40px;
+    font-size: 36px;
+    line-height: 1.22;
+    border-radius: 0 30px 30px 0;
+  }
 }
 
 .hero__swiper-slide p {
@@ -98,12 +157,41 @@
   color: $text;
   background-color: $white;
   border-radius: 0 0 14px;
+
+  @media ($tablet) {
+    max-width: 100%;
+    padding: 0 266px 35px 40px;
+    font-size: 16px;
+    border-radius: 0 0 30px 30px;
+  }
+}
+
+.hero__swiper-slide p br {
+  @media ($tablet) {
+    display: none;
+  }
+}
+
+.hero__footer {
+  @media ($tablet) {
+    position: relative;
+    max-width: 90%;
+  }
 }
 
 .hero__button-container {
+  max-width: 184px;
   padding: 10px 15px;
   background-color: $white;
   border-radius: 0 0 14px 14px;
+
+  @media ($tablet) {
+    position: absolute;
+    top: -10px;
+    right: 25px;
+    max-width: 228px;
+    background-color: transparent;
+  }
 }
 
 .hero__link {
@@ -144,5 +232,19 @@
     mask-image: url("/__spritemap#sprite-arrow-thin-view");
     background-color: $white;
     translate: 0 -50%;
+  }
+
+  @media ($tablet) {
+    padding: 20px 80px 20px 30px;
+    font-size: 14px;
+
+    &::before {
+      width: 46px;
+      height: 46px;
+    }
+
+    &::after {
+      right: 22px;
+    }
   }
 }
