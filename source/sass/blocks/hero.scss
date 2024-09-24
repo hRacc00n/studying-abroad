@@ -25,3 +25,25 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.hero__paginations {
+  @include list-resseting;
+
+  display: flex;
+  gap: 5px;
+}
+
+.hero__pagination-button {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  background-color: transparent;
+  border: 2px solid $primary;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &--current {
+    background-color: $state-active;
+    border-color: $state-active;
+  }
+}
