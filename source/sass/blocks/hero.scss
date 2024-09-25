@@ -157,10 +157,28 @@
   border: 2px solid $primary;
   border-radius: 50%;
   cursor: pointer;
+  transition: all 0.3s;
 
   &--current {
     background-color: $state-active;
     border-color: $state-active;
+  }
+
+  &:hover {
+    border-color: $white;
+    background-color: rgb(49, 109, 194, 0.7);
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+
+  &:focus-visible {
+    background-color: $primary;
+    transition: background-color 0.3s;
+  }
+
+  &:active {
+    border-color: $state-active;
+    background-color: $state-active;
+    transition: border-color 0.3s, background-color 0.3s;
   }
 
   @media ($tablet) {
@@ -271,6 +289,7 @@
   text-decoration: none;
   border: 1px solid $primary;
   border-radius: 30px;
+  transition: all 0.3s;
 
   &::before {
     content: "";
@@ -282,6 +301,7 @@
     background-color: $primary;
     border-radius: 50%;
     translate: 0 -50%;
+    transition: all 0.3s;
   }
 
   &::after {
@@ -294,6 +314,42 @@
     mask-image: url("/__spritemap#sprite-arrow-thin-view");
     background-color: $white;
     translate: 0 -50%;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $primary;
+    transition: color 0.3s, background-color 0.3s;
+
+    &::before {
+      background-color: $white;
+      transition: background-color 0.3s;
+    }
+
+    &::after {
+      background-color: $primary;
+      rotate: 45deg;
+      transition: background-color 0.3s, rotate 0.3s;
+    }
+  }
+
+  &:focus-visible {
+    &::after {
+      rotate: 45deg;
+      transition: rotate 0.3s;
+    }
+  }
+
+  &:active {
+    color: rgb(255, 255, 255, 0.7);
+    transition: opacity 0.3s;
+
+    &::after {
+      color: rgb(255, 255, 255, 0.7);
+      rotate: 45deg;
+      transition: color 0.3s, rotate 0.3s;
+    }
   }
 
   @media ($tablet) {
