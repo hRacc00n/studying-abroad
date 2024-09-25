@@ -256,6 +256,38 @@
 
 
     <div data-test="footer">footer</div>
+
+    <div class="modal">
+      <div class="modal__container">
+        <button class="modal__close-button" type="button">
+          <span class="visually-hidden">Закрыть окно</span>
+        </button>
+
+        <h2 class="modal__title">Напишите нам</h2>
+
+        <p class="modal__text">Оставьте ваши контакты, если у вас остались вопросы – мы на них ответим!</p>
+
+        <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
+          <label class="modal__label" for="name">Имя</label>
+          <input class="modal__input" type="text" name="name" id="name">
+
+          <label class="modal__label" for="phone">Телефон</label>
+          <input class="modal__input" type="text" name="phone" id="phone">
+
+          <label class="modal__label" for="city">Выберите город</label>
+          <select class="modal__select" name="city" id="city"></select>
+
+          <label class="modal__label modal__lable--checkbox">
+            <input class="modal__control visually-hidden " type="checkbox" name="agree">
+            <span class="control__mark control__mark--extra"></span>
+            <span class="control__label">Я согласен на обработку моих персональных данных</span>
+          </label>
+
+          <button class="modal__button button" type="submit">отправить</button>
+        </form>
+      </div>
+    </div>
+
     <script type="module" src="js/main.js"></script>
   </body>
 
