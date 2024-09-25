@@ -137,15 +137,34 @@
 .hero__paginations {
   @include list-resseting;
 
+  position: relative;
   display: flex;
   padding: 0 16px 6px;
   gap: 12px;
   background-color: $white;
   border-radius: 12px 12px 0 0;
 
+  &::before {
+    content: "";
+    position: absolute;
+    right: -10px;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    background-color: $white;
+    clip-path: polygon(100% 100%, 100% 100%, 83.78% 98.69%, 68.39% 94.9%, 54.04% 88.84%, 40.94% 80.71%, 29.29% 70.71%, 19.29% 59.06%, 11.16% 45.96%, 5.1% 31.61%, 1.31% 16.22%, 0% 0%, 0% 100%, 100% 100%);
+  }
+
   @media ($tablet) {
     padding: 8px 20px 10px;
     border-radius: 20px 20px 0 0;
+
+    &::before {
+      right: -20px;
+      width: 20px;
+      height: 20px;
+      clip-path: polygon(100% 100%, 100% 100%, 83.78% 98.69%, 68.39% 94.9%, 54.04% 88.84%, 40.94% 80.71%, 29.29% 70.71%, 19.29% 59.06%, 11.16% 45.96%, 5.1% 31.61%, 1.31% 16.22%, 0% 0%, 0% 100%, 100% 100%);
+    }
   }
 }
 
@@ -212,8 +231,10 @@
 }
 
 .hero__swiper-slide p {
+  position: relative;
   display: block;
-  max-width: 92%;
+  width: 92%;
+  max-width: 500px;
   margin: 0;
   padding: 0 14px 15px;
   font-size: 16px;
@@ -223,17 +244,41 @@
   background-color: $white;
   border-radius: 0 0 14px;
 
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -8px;
+    width: 8px;
+    height: 10px;
+    background-color: $white;
+    clip-path: polygon(100% 0%, 100% 0%, 83.78% 1.31%, 68.39% 5.1%, 54.04% 11.16%, 40.94% 19.29%, 29.29% 29.29%, 19.29% 40.94%, 11.16% 54.04%, 5.1% 68.39%, 1.31% 83.78%, 0% 100%, 0% 0%, 100% 0%);
+  }
+
   @media ($tablet) {
-    max-width: 100%;
+    width: 100%;
+    max-width: 1050px;
     padding: 0 266px 35px 40px;
     font-size: 16px;
     border-radius: 0 0 30px 30px;
+
+    &::before {
+      right: -26px;
+      width: 26px;
+      height: 26px;
+      clip-path: polygon(100% 0%, 100% 0%, 83.78% 1.31%, 68.39% 5.1%, 54.04% 11.16%, 40.94% 19.29%, 29.29% 29.29%, 19.29% 40.94%, 11.16% 54.04%, 5.1% 68.39%, 1.31% 83.78%, 0% 100%, 0% 0%, 100% 0%);
+    }
   }
 
   @media ($desktop) {
     max-width: 89%;
     padding: 1px 266px 34px 50px;
     line-height: 1.62;
+
+    &::before {
+      top: -1px;
+      right: -25px;
+    }
   }
 }
 
@@ -255,10 +300,22 @@
 }
 
 .hero__button-container {
+  position: relative;
   max-width: 184px;
   padding: 10px 15px;
   background-color: $white;
   border-radius: 0 0 14px 14px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: $white;
+    clip-path: polygon(100% 0%, 100% 0%, 83.78% 1.31%, 68.39% 5.1%, 54.04% 11.16%, 40.94% 19.29%, 29.29% 29.29%, 19.29% 40.94%, 11.16% 54.04%, 5.1% 68.39%, 1.31% 83.78%, 0% 100%, 0% 0%, 100% 0%);
+  }
 
   @media ($tablet) {
     position: absolute;
