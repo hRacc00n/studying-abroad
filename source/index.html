@@ -15,7 +15,201 @@
       <use href="/__spritemap#sprite-user"></use>
     </svg> -->
     <!-- примеры требуемых атрибутов data-test="*" -->
-    <div data-test="hero">hero</div>
+
+    <header class="header" data-test="hero">
+      <div class="header__container">
+
+        <div class="header__content">
+          <div class="header__logo-container logo">
+            <img class="header__logo logo__image" src="/__spritemap#sprite-logo-view" alt="Логотип Internship" width="30" height="30">
+          </div>
+
+          <div class="header__button-container">
+            <span class="header__button-text">меню</span>
+
+            <button class="header__button toggle-burger" type="button">
+              <span class="visually-hidden">Открыть меню</span>
+              <span class="toggle-burger__line toggle-burger--line1"></span>
+              <span class="toggle-burger__line toggle-burger--line2 header__line"></span>
+              <span class="toggle-burger__line toggle-burger--line3"></span>
+            </button>
+          </div>
+
+          <ul class="header__menu">
+            <li class="header__item">
+              <a class="header__link" href="#">О проекте</a>
+            </li>
+
+            <li class="header__item header__item--submenu">
+              <a class="header__link header__link--submenu" href="#">Программы</a>
+
+              <ul class="header__submenu">
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Стажировки</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Волонтёрство</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Учёба</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Религия</a>
+                </li>
+              </ul>
+
+            </li>
+
+            <li class="header__item">
+              <a class="header__link" href="#">как поехать</a>
+            </li>
+
+            <li class="header__item">
+              <a class="header__link" href="#">отзывы</a>
+            </li>
+
+            <li class="header__item header__item--submenu">
+              <a class="header__link header__link--submenu" href="#">новости</a>
+
+              <ul class="header__submenu">
+                <li class="header__subitem">
+                  <a class="header__link" href="#">общее</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Волонтёрство</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Стажировки</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">Карьера</a>
+                </li>
+
+                <li class="header__subitem">
+                  <a class="header__link" href="#">путешествия</a>
+                </li>
+              </ul>
+
+            </li>
+
+            <li class="header__item">
+              <a class="header__link" href="#">контакты</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="header__hero hero">
+          <div class="hero__swiper swiper">
+            <ul class="hero__wrapper swiper-wrapper">
+
+              <li class="hero__swiper-slide hero__swiper-slide--experience swiper-slide">
+                <ul class="hero__paginations">
+                  <li class="hero__pagination">
+                    <button class="hero__pagination-button  hero__pagination-button--1 hero__pagination-button--current" type="button">
+                      <span class="visually-hidden">Переключить на первый слайд</span>
+                    </button>
+                  </li>
+                  <li class="hero__pagination">
+                    <button class="hero__pagination-button  hero__pagination-button--2" type="button">
+                      <span class="visually-hidden">Переключить на второй слайд</span>
+                    </button>
+                  </li>
+                  <li class="hero__pagination">
+                    <button class="hero__pagination-button  hero__pagination-button--3" type="button">
+                      <span class="visually-hidden">Переключить на третий слайд</span>
+                    </button>
+                  </li>
+                </ul>
+
+                <h2 class="hero__title">Глобальный профессиональный опыт обучения за рубежом</h2>
+
+                <div class="hero__footer">
+                  <p>Погрузитесь в академическую программу, проходя практику в разных городах, ощущая настоящий студенческий<br> стиль жизни!</p>
+
+                  <div class="hero__button-container">
+                    <a class="hero__link" href="#">подробнее</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="hero__swiper-slide hero__swiper-slide--volunteering swiper-slide">
+                <ul class="hero__paginations">
+                  <li class="hero__pagination">
+                    <button class="hero__pagination-button hero__pagination-button--1" type="button">
+                      <span class="visually-hidden">Переключить на первый слайд</span>
+                    </button>
+                  </li>
+                  <li class="hero__pagination">
+                    <button class="hero__pagination-button hero__pagination-button--2 hero__pagination-button--current" type="button">
+                      <span class="visually-hidden">Переключить на второй слайд</span>
+                    </button>
+                  </li>
+                  <li class="hero__pagination">
+                    <button class="hero__pagination-button hero__pagination-button--3" type="button">
+                      <span class="visually-hidden">Переключить на третий слайд</span>
+                    </button>
+                  </li>
+                </ul>
+
+                <h2 class="hero__title">Волонтёрские программы — внесите свой вклад в общество</h2>
+
+                <div class="hero__footer">
+                  <p>Возможности для преподавания, органического сельского хозяйства, устойчивого образа жизни и другое.</p>
+
+                  <div class="hero__button-container">
+                    <a class="hero__link" href="#">подробнее</a>
+                  </div>
+                </div>
+
+              </li>
+
+              <li class="hero__swiper-slide hero__swiper-slide--internship swiper-slide">
+                <ul class="hero__paginations">
+                  <li class="hero__pagination">
+                    <button class="hero__pagination-button hero__pagination-button--1" type="button">
+                      <span class="visually-hidden">Переключить на первый слайд</span>
+                    </button>
+                  </li>
+                  <li class="hero__pagination">
+                    <button class="hero__pagination-button hero__pagination-button--2" type="button">
+                      <span class="visually-hidden">Переключить на второй слайд</span>
+                    </button>
+                  </li>
+                  <li class="hero__pagination">
+                    <button class="hero__pagination-button hero__pagination-button--3 hero__pagination-button--current" type="button">
+                      <span class="visually-hidden">Переключить на третий слайд</span>
+                    </button>
+                  </li>
+                </ul>
+
+                <h2 class="hero__title">Программы стажировок в крупнейших компаниях мира</h2>
+
+                <div class="hero__footer">
+                  <p>Получите незаменимый опыт работы в ведущих мировых компаниях и государственных организациях.</p>
+
+                  <div class="hero__button-container">
+                    <a class="hero__link" href="#">подробнее</a>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+
+            <div class="hero__shadow-pagination visually-hidden"></div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
     <div data-test="about">about</div>
     <div data-test="programs">programs</div>
     <div data-test="grant">grant</div>

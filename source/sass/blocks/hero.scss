@@ -1,0 +1,429 @@
+.hero {
+  min-height: 100%;
+}
+
+.hero__wrapper {
+  @include list-resseting;
+}
+
+.hero__swiper-slide.swiper-slide {
+  display: flex;
+  min-height: 568px;
+  padding: 80px 15px 20px;
+  flex-direction: column;
+  justify-content: end;
+  align-items: start;
+
+  @media ($tablet) {
+    position: relative;
+    min-height: 1024px;
+    padding: 110px 64px 60px 45px;
+  }
+
+  @media ($desktop) {
+    min-height: 800px;
+    padding: 110px 372px 60px 100px;
+  }
+}
+
+.hero__swiper-slide--experience {
+  background:
+    image-set(
+      url("../../img/hero/experience-mobile@1x.webp") type("image/webp") 1x,
+      url("../../img/hero/experience-mobile@2x.webp") type("image/webp") 2x,
+      url("../../img/hero/experience-mobile@1x.jpg") type("image/jpeg") 1x,
+      url("../../img/hero/experience-mobile@2x.jpg") type("image/jpeg") 2x
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media ($tablet) {
+    background:
+      image-set(
+        url("../../img/hero/experience-tablet@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/experience-tablet@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/experience-tablet@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/experience-tablet@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media ($desktop) {
+    background:
+      image-set(
+        url("../../img/hero/experience-desktop@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/experience-desktop@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/experience-desktop@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/experience-desktop@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.hero__swiper-slide--volunteering {
+  background:
+    image-set(
+      url("../../img/hero/volunteering-mobile@1x.webp") type("image/webp") 1x,
+      url("../../img/hero/volunteering-mobile@2x.webp") type("image/webp") 2x,
+      url("../../img/hero/volunteering-mobile@1x.jpg") type("image/jpeg") 1x,
+      url("../../img/hero/volunteering-mobile@2x.jpg") type("image/jpeg") 2x
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media ($tablet) {
+    background:
+      image-set(
+        url("../../img/hero/volunteering-tablet@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/volunteering-tablet@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/volunteering-tablet@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/volunteering-tablet@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media ($tablet) {
+    background:
+      image-set(
+        url("../../img/hero/volunteering-desktop@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/volunteering-desktop@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/volunteering-desktop@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/volunteering-desktop@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.hero__swiper-slide--internship {
+  background:
+    image-set(
+      url("../../img/hero/internship-mobile@1x.webp") type("image/webp") 1x,
+      url("../../img/hero/internship-mobile@2x.webp") type("image/webp") 2x,
+      url("../../img/hero/internship-mobile@1x.jpg") type("image/jpeg") 1x,
+      url("../../img/hero/internship-mobile@2x.jpg") type("image/jpeg") 2x
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media ($tablet) {
+    background:
+      image-set(
+        url("../../img/hero/internship-tablet@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/internship-tablet@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/internship-tablet@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/internship-tablet@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media ($desktop) {
+    background:
+      image-set(
+        url("../../img/hero/internship-desktop@1x.webp") type("image/webp") 1x,
+        url("../../img/hero/internship-desktop@2x.webp") type("image/webp") 2x,
+        url("../../img/hero/internship-desktop@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/hero/internship-desktop@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.hero__paginations {
+  @include list-resseting;
+
+  position: relative;
+  display: flex;
+  padding: 0 16px 6px;
+  gap: 12px;
+  background-color: $white;
+  border-radius: 12px 12px 0 0;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: -10px;
+    bottom: 0;
+    width: 10px;
+    height: 10px;
+    background-color: $white;
+    clip-path: polygon(100% 100%, 100% 100%, 83.78% 98.69%, 68.39% 94.9%, 54.04% 88.84%, 40.94% 80.71%, 29.29% 70.71%, 19.29% 59.06%, 11.16% 45.96%, 5.1% 31.61%, 1.31% 16.22%, 0% 0%, 0% 100%, 100% 100%);
+  }
+
+  @media ($tablet) {
+    padding: 8px 20px 10px;
+    border-radius: 20px 20px 0 0;
+
+    &::before {
+      right: -20px;
+      width: 20px;
+      height: 20px;
+      clip-path: polygon(100% 100%, 100% 100%, 83.78% 98.69%, 68.39% 94.9%, 54.04% 88.84%, 40.94% 80.71%, 29.29% 70.71%, 19.29% 59.06%, 11.16% 45.96%, 5.1% 31.61%, 1.31% 16.22%, 0% 0%, 0% 100%, 100% 100%);
+    }
+  }
+}
+
+.hero__pagination-button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  background-color: transparent;
+  border: 2px solid $primary;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &--current {
+    background-color: $state-active;
+    border-color: $state-active;
+  }
+
+  &:hover {
+    border-color: $white;
+    background-color: rgb(49, 109, 194, 0.7);
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+
+  &:focus-visible {
+    background-color: $primary;
+    transition: background-color 0.3s;
+  }
+
+  &:active {
+    border-color: $state-active;
+    background-color: $state-active;
+    transition: border-color 0.3s, background-color 0.3s;
+  }
+
+  @media ($tablet) {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.hero__title {
+  margin: 0;
+  padding: 20px 15px 16px 14px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.18;
+  color: $primary;
+  background-color: $white;
+  border-radius: 0 16px 16px 0;
+
+  @media ($tablet) {
+    padding: 31px 69px 23px 40px;
+    font-size: 36px;
+    line-height: 1.22;
+    border-radius: 0 30px 30px 0;
+  }
+
+  @media ($desktop) {
+    padding: 40px 69px 30px 50px;
+    font-size: 54px;
+    line-height: 1.15;
+  }
+}
+
+.hero__swiper-slide p {
+  position: relative;
+  display: block;
+  width: 92%;
+  max-width: 500px;
+  margin: 0;
+  padding: 0 14px 15px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: $text;
+  background-color: $white;
+  border-radius: 0 0 14px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -8px;
+    width: 8px;
+    height: 10px;
+    background-color: $white;
+    clip-path: polygon(100% 0%, 100% 0%, 83.78% 1.31%, 68.39% 5.1%, 54.04% 11.16%, 40.94% 19.29%, 29.29% 29.29%, 19.29% 40.94%, 11.16% 54.04%, 5.1% 68.39%, 1.31% 83.78%, 0% 100%, 0% 0%, 100% 0%);
+  }
+
+  @media ($tablet) {
+    width: 100%;
+    max-width: 1050px;
+    padding: 0 266px 35px 40px;
+    font-size: 16px;
+    border-radius: 0 0 30px 30px;
+
+    &::before {
+      right: -26px;
+      width: 26px;
+      height: 26px;
+      clip-path: polygon(100% 0%, 100% 0%, 83.78% 1.31%, 68.39% 5.1%, 54.04% 11.16%, 40.94% 19.29%, 29.29% 29.29%, 19.29% 40.94%, 11.16% 54.04%, 5.1% 68.39%, 1.31% 83.78%, 0% 100%, 0% 0%, 100% 0%);
+    }
+  }
+
+  @media ($desktop) {
+    max-width: 89%;
+    padding: 1px 266px 34px 50px;
+    line-height: 1.62;
+
+    &::before {
+      top: -1px;
+      right: -25px;
+    }
+  }
+}
+
+.hero__swiper-slide p br {
+  @media ($tablet) {
+    display: none;
+  }
+}
+
+.hero__footer {
+  @media ($tablet) {
+    position: relative;
+    max-width: 90%;
+  }
+
+  @media ($desktop) {
+    min-width: 775px;
+  }
+}
+
+.hero__button-container {
+  position: relative;
+  max-width: 184px;
+  padding: 10px 15px;
+  background-color: $white;
+  border-radius: 0 0 14px 14px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: $white;
+    clip-path: polygon(100% 0%, 100% 0%, 83.78% 1.31%, 68.39% 5.1%, 54.04% 11.16%, 40.94% 19.29%, 29.29% 29.29%, 19.29% 40.94%, 11.16% 54.04%, 5.1% 68.39%, 1.31% 83.78%, 0% 100%, 0% 0%, 100% 0%);
+  }
+
+  @media ($tablet) {
+    position: absolute;
+    top: -10px;
+    right: 25px;
+    max-width: 228px;
+    background-color: transparent;
+  }
+
+  @media ($desktop) {
+    top: 0;
+    right: 131px;
+  }
+}
+
+.hero__link {
+  position: relative;
+  display: block;
+  padding: 16px 59px 14px 19px;
+  font-family: $basic-font;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: $primary;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid $primary;
+  border-radius: 30px;
+  transition: all 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    width: 34px;
+    height: 34px;
+    background-color: $primary;
+    border-radius: 50%;
+    translate: 0 -50%;
+    transition: all 0.3s;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    width: 10px;
+    height: 10px;
+    mask-image: url("/__spritemap#sprite-arrow-thin-view");
+    background-color: $white;
+    translate: 0 -50%;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    color: $white;
+    background-color: $primary;
+    transition: color 0.3s, background-color 0.3s;
+
+    &::before {
+      background-color: $white;
+      transition: background-color 0.3s;
+    }
+
+    &::after {
+      background-color: $primary;
+      rotate: 45deg;
+      transition: background-color 0.3s, rotate 0.3s;
+    }
+  }
+
+  &:focus-visible {
+    &::after {
+      rotate: 45deg;
+      transition: rotate 0.3s;
+    }
+  }
+
+  &:active {
+    color: rgb(255, 255, 255, 0.7);
+    transition: opacity 0.3s;
+
+    &::after {
+      color: rgb(255, 255, 255, 0.7);
+      rotate: 45deg;
+      transition: color 0.3s, rotate 0.3s;
+    }
+  }
+
+  @media ($tablet) {
+    padding: 20px 80px 20px 30px;
+    font-size: 14px;
+
+    &::before {
+      width: 46px;
+      height: 46px;
+    }
+
+    &::after {
+      right: 22px;
+    }
+  }
+
+  @media ($desktop) {
+    padding: 21px 80px 21px 30px;
+  }
+}

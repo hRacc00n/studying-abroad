@@ -1,0 +1,206 @@
+.header__container {
+  position: relative;
+  min-height: 568px;
+  margin: 0 auto;
+
+  @media ($tablet) {
+    min-height: 1024px;
+  }
+
+  @media ($desktop) {
+    min-height: 800px;
+  }
+}
+
+.header__content {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.header__menu {
+  @include list-resseting;
+
+  position: absolute;
+  top: 78px;
+  right: 15px;
+  display: flex;
+  padding: 31px 0;
+  flex-direction: column;
+  gap: 17px;
+  width: 0;
+  border-radius: 16px;
+  background-color: $primary;
+  overflow: hidden;
+  opacity: 0;
+  transition: width 0.3s, opacity 0.3s ease 0.1s, padding 0.3s;
+
+  @media ($tablet) {
+    top: 88px;
+    right: 45px;
+  }
+
+  @media ($desktop) {
+    right: 100px;
+  }
+}
+
+.header__menu--open {
+  right: 15px;
+  width: 290px;
+  padding: 31px 25px;
+  opacity: 1;
+  transition: width 0.3s, opacity 0.3s;
+  z-index: 3;
+
+  @media ($tablet) {
+    right: 45px;
+  }
+
+  @media ($desktop) {
+    right: 100px;
+  }
+}
+
+.header__button-container:not(.header__button-container--open):hover .header__line {
+  width: 10px;
+  transition: width 0.3s;
+}
+
+.header__button-container {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  display: flex;
+  width: 136px;
+  padding: 3px 4px 3px 21px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  border: 1px solid $primary;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: width 0.3s, background-color 0.3s;
+
+  &--open {
+    position: absolute;
+    top: 20px;
+    width: 290px;
+    background-color: $primary;
+    transition: width 0.3s, background-color 0.3s;
+    z-index: 3;
+  }
+
+  @media ($tablet) {
+    top: 31px;
+    right: 45px;
+  }
+
+  @media ($desktop) {
+    right: 100px;
+  }
+}
+
+.header__button-container--open .header__button-text {
+  color: $white;
+  transition: color 0.3s;
+}
+
+.header__button-text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: $primary;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.header__item .header__link {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: $white;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 1;
+    transition: opacity 0.3s;
+  }
+}
+
+.header__subitem .header__link {
+  letter-spacing: normal;
+  text-transform: capitalize;
+  opacity: 0.6;
+}
+
+.header__submenu {
+  @include list-resseting;
+
+  position: relative;
+  display: flex;
+  max-height: 0;
+  padding-left: 16px;
+  flex-direction: column;
+  gap: 5px;
+  overflow: hidden;
+  transition: max-height 0.3s, padding 0.3s ease 0.1s;
+}
+
+.header__item--submenu > .header__link {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 15px;
+    right: -24px;
+    width: 8px;
+    height: 8px;
+    transform-origin: 0 0;
+    rotate: -135deg;
+    border-top: 1px solid $white;
+    border-left: 1px solid $white;
+    transition: rotate 0.3s;
+  }
+}
+
+.header__item--submenu-open > .header__link {
+  opacity: 1;
+
+  &::before {
+    top: 8px;
+    rotate: 45deg;
+    transition: rotate 0.3s;
+  }
+}
+
+.header__item--submenu-open .header__submenu {
+  max-height: 1500px;
+  padding: 10px 0 0 16px;
+  transition: max-height 0.3s, padding 0.3s;
+}
+
+.header__logo-container {
+  position: absolute;
+  top: 21px;
+  left: 15px;
+
+  @media ($tablet) {
+    top: 32px;
+    left: 45px;
+  }
+
+  @media ($desktop) {
+    left: 100px;
+  }
+}
