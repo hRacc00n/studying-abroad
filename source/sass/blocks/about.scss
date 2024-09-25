@@ -7,6 +7,14 @@
     width: 768px;
     padding: 51px 45px 50px;
   }
+
+  @media ($desktop) {
+    display: flex;
+    width: 1440px;
+    padding: 70px 100px 60px;
+    flex-wrap: wrap;
+    gap: 59px 40px;
+  }
 }
 
 .about__title {
@@ -25,6 +33,12 @@
     font-size: 34px;
     line-height: 1.47;
   }
+
+  @media ($desktop) {
+    margin-bottom: 31px;
+    font-size: 50px;
+    line-height: 1;
+  }
 }
 
 .about__main {
@@ -32,6 +46,11 @@
 
   @media ($tablet) {
     margin-bottom: 39px;
+  }
+
+  @media ($desktop) {
+    width: 702px;
+    margin-bottom: 0;
   }
 }
 
@@ -46,6 +65,11 @@
     font-size: 20px;
     line-height: 1.3;
   }
+
+  @media ($desktop) {
+    font-size: 22px;
+    line-height: 1.45;
+  }
 }
 
 .about__goal {
@@ -54,6 +78,11 @@
   @media ($tablet) {
     width: 498px;
     margin-bottom: 60px;
+  }
+
+  @media ($desktop) {
+    width: 498px;
+    margin-bottom: 0;
   }
 }
 
@@ -70,6 +99,14 @@
     font-size: 28px;
     line-height: 1;
   }
+
+  @media ($desktop) {
+    position: relative;
+    top: 1px;
+    margin-bottom: 41px;
+    font-size: 32px;
+    line-height: 1.12;
+  }
 }
 
 .about__goal > p {
@@ -84,6 +121,11 @@
     margin-bottom: 40px;
     font-size: 16px;
     line-height: 1.25;
+  }
+
+  @media ($desktop) {
+    margin-bottom: 49px;
+    line-height: 1.62;
   }
 }
 
@@ -102,6 +144,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 54px 52px;
+  }
+
+  @media ($desktop) {
+    padding: 72px 100px 50px 120px;
   }
 }
 
@@ -136,6 +182,14 @@
     width: 253px;
     padding: 16px 21px 15px 20px;
   }
+
+  @media ($desktop) {
+    display: flex;
+    width: 484px;
+    padding: 31px 41px 29px 40px;
+    gap: 30px;
+    align-items: center;
+  }
 }
 
 .about__feature > h4 {
@@ -152,6 +206,14 @@
     margin-bottom: 14px;
     font-size: 20px;
     line-height: 1.1;
+  }
+
+  @media ($desktop) {
+    min-width: 171px;
+    margin-bottom: 0;
+    justify-self: start;
+    font-size: 26px;
+    line-height: 1.15;
   }
 }
 
