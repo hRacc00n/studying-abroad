@@ -2,51 +2,32 @@
 // import Swiper from "swiper";
 // import {Navigation, Pagination} from "swiper/modules";
 // import 'swiper/css';
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 import { onButtonBurgerOpenMenu } from './on-button-burger-open-menu';
-import { headerButtonContainer } from './variables';
+import { swiperHero } from './swipers';
+import { headerButtonContainer,} from './variables';
 
 headerButtonContainer.addEventListener('click', onButtonBurgerOpenMenu);
+swiperHero.update();
 
-// Слайдер
+// модальное окно
 
-const swiperHero = new Swiper('.hero__swiper', {
-  modules: [Pagination],
-  pagination: {
-    el: '.hero__shadow-pagination',
-    renderBullet: function(index) {
-      return `<span class="bullet-${index} swiper-pagination-bullet""></span>`;
-    },
-    clickable: true,
-  },
-  loop: true,
-  breakpoints: {
-    320: {
-      simulateTouch: true,
-    },
-    1440: {
-      simulateTouch: false,
-    },
-  },
+const aboutButton = document.querySelector('.about__button');
+const modal = document.querySelector('.modal');
+const currentPhone = /^\d{10}$/;
+
+aboutButton.addEventListener('click', () => {
+  modal.classList.remove('modal--hide');
+  setTimeout(() => {
+    modal.classList.remove('modal--close');
+  }, 100);
 });
 
-const heroWrapper = document.querySelector('.hero__wrapper');
-
-heroWrapper.addEventListener('click', (evt) => {
-  if (evt.target.className.includes('hero__pagination-button--1')) {
-    const bullet1 = document.querySelector('.bullet-0');
-    bullet1.click();
-  }
-  if (evt.target.className.includes('hero__pagination-button--2')) {
-    const bullet2 = document.querySelector('.bullet-1');
-    bullet2.click();
-  }
-  if (evt.target.className.includes('hero__pagination-button--3')) {
-    const bullet3 = document.querySelector('.bullet-2');
-    bullet3.click();
+modal.addEventListener('click', (evt) => {
+  if (evt.target.className === 'modal' || evt.target.className === 'modal__close-button') {
+    modal.classList.add('modal--close');
+    setTimeout(() => {
+      modal.classList.add('modal--hide');
+    }, 300);
   }
 });
+

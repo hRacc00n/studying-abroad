@@ -7,12 +7,24 @@
   padding: 23px 15px;
   translate: -50% -50%;
   z-index: 5;
-  background-color: rgb(71, 65, 65, 0.7);
+  background-color: rgb(45, 56, 63, 0.7);
+  opacity: 1;
+  transition: opacity 0.3s;
+
+  &--close {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &--hide {
+    display: none;
+  }
 }
 
 .modal__container {
   position: relative;
   width: 290px;
+  margin: 0 auto;
   padding: 36px 15px 40px;
   background-color: $white;
   border-radius: 16px;
@@ -100,8 +112,10 @@
 
 .modal__lable--checkbox {
   display: grid;
+  margin-bottom: 22px;
   grid-template-columns: 20px 1fr;
   gap: 10px;
+  cursor: pointer;
 }
 
 .modal__control-label {
@@ -113,9 +127,40 @@
 }
 
 .modal__mark {
+  position: relative;
+  top: -1px;
   width: 20px;
   height: 20px;
   align-self: center;
   grid-column: 1 / 2;
   background-color: $primary;
+  border-radius: 2px;
+}
+
+.modal__control:checked + .modal__mark {
+  position: relative;
+  background-color: $white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    mask-image: url("/__spritemap#sprite-mark-view");
+    background-color: $primary;
+    translate: -50% -50%;
+  }
+}
+
+.modal__form:has(.modal__input--phone:focus) .modal__label--phone {
+  position: relative;
+
+  &::before {
+    content: "+7";
+    position: absolute;
+    bottom: -37px;
+    left: 7px;
+  }
 }

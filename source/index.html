@@ -257,7 +257,7 @@
 
     <div data-test="footer">footer</div>
 
-    <div class="modal">
+    <div class="modal modal--close modal--hide">
       <div class="modal__container">
         <button class="modal__close-button" type="button">
           <span class="visually-hidden">Закрыть окно</span>
@@ -269,10 +269,10 @@
 
         <form class="modal__form" action="https://echo.htmlacademy.ru" method="post">
           <label class="modal__label" for="name">Имя</label>
-          <input class="modal__input" type="text" name="name" id="name">
+          <input class="modal__input" type="text" name="name" id="name" required>
 
-          <label class="modal__label" for="phone">Телефон</label>
-          <input class="modal__input" type="text" name="phone" id="phone">
+          <label class="modal__label modal__label--phone" for="phone">Телефон</label>
+          <input class="modal__input modal__input--phone" type="number" name="phone" id="phone" required>
 
           <label class="modal__label" for="city">Выберите город</label>
           <select class="modal__select" name="city" id="city"></select>
