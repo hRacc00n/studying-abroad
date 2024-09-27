@@ -12,47 +12,129 @@ swiperHero.update();
 // модальное окно
 
 const aboutButton = document.querySelector('.about__button');
+
 const modal = document.querySelector('.modal');
 const form = modal.querySelector('.modal__form');
 const currentPhone = /^\d{10}$/;
 const phoneInput = modal.querySelector('.modal__input--phone');
-const modalSelect = modal.querySelector('.modal__select');
+const nameInput = modal.querySelector('#name');
+const modalSelect = modal.querySelector('#city');
+const modalMark = modal.querySelector('.modal__mark');
+const modalControl = modal.querySelector('.modal__control');
 
-aboutButton.addEventListener('click', () => {
+const resetValues = () => {
+  nameInput.value = '';
+  phoneInput.value = '';
+  modalSelect.value = 'empty';
+  modalControl.checked = false;
+};
+
+const openModal = () => {
   modal.classList.remove('modal--hide');
   setTimeout(() => {
     modal.classList.remove('modal--close');
   }, 100);
+};
+
+const closeModal = () => {
+  modal.classList.add('modal--close');
+  setTimeout(() => {
+    modal.classList.add('modal--hide');
+  }, 300);
+};
+
+// const checkInput = (element, currentElement, evt) => {
+//   if (!currentElement.test(element.value) || element.value === '') {
+//     evt.preventDefault();
+//     element.classList.add('modal__input--error');
+//   }
+// };
+
+const checkInput = (element, currentElement) => {
+  if (currentElement.test(element.value) || element.value === '') {
+    return true;
+  }
+  return false;
+};
+
+const addInputClass = (element, evt) => {
+  evt.preventDefault();
+  element.classList.add('modal__input--error');
+};
+
+
+
+
+
+
+aboutButton.addEventListener('click', () => {
+  openModal();
 });
 
 modal.addEventListener('click', (evt) => {
-  if (evt.target.className === 'modal' || evt.target.className === 'modal__close-button') {
-    modal.classList.add('modal--close');
-    setTimeout(() => {
-      modal.classList.add('modal--hide');
-    }, 300);
+  const targetClick = evt.target.className;
+
+  if (targetClick === 'modal' || targetClick === 'modal__close-button') {
+    closeModal();
+    resetValues();
   }
 });
 
-const checkInput = (element, currentElement, evt) => {
-  if (!currentElement.test(element.value) || element.value === '') {
-    evt.preventDefault();
-    element.classList.add('modal__input--error');
-  }
-};
-
 phoneInput.addEventListener('input', () => {
-  if (currentPhone.test(phoneInput.value) || phoneInput.value === '') {
+  if (checkInput(phoneInput, currentPhone)) {
     phoneInput.classList.remove('modal__input--error');
   }
 });
 
+// form.addEventListener('submit', (evt) => {
+//   checkInput(phoneInput, currentPhone, evt);
+
+//   if (modalSelect.value === 'empty') {
+//     modalSelect.classList.add('modal__select--error');
+//     evt.preventDefault();
+//   }
+
+//   if (!modalControl.checked){
+//     evt.preventDefault();
+//     modalMark.classList.add('modal__mark--error');
+//   }
+// });
+
 form.addEventListener('submit', (evt) => {
-  checkInput(phoneInput, currentPhone, evt);
+  if (!checkInput(phoneInput, currentPhone)) {
+    addInputClass(phoneInput, evt);
+  }
 
   if (modalSelect.value === 'empty') {
     modalSelect.classList.add('modal__select--error');
-    evt.defaultPrevented();
+    evt.preventDefault();
+  }
+
+  if (!modalControl.checked){
+    evt.preventDefault();
+    modalMark.classList.add('modal__mark--error');
+  }
+
+  if (checkInput(phoneInput, currentPhone) &&
+      modalSelect.value !== 'empty' &&
+      modalControl.checked
+  ) {
+    evt.preventDefault();
+
+    const formData = new FormData(form);
+
+    fetch('https://echo.htmlacademy.ru',
+      {
+        method: 'POST',
+        body: formData,
+      },
+    )
+      .then((response) => {
+        if (response.ok) {
+          closeModal();
+          resetValues();
+        }
+      });
   }
 });
 
@@ -64,5 +146,41 @@ modalList.addEventListener('click', (evt) => {
 
     modal.querySelector('.modal__item--active').classList.toggle('modal__item--active');
     evt.target.classList.toggle('modal__item--active');
+  }
+});
+
+modalSelect.addEventListener('mousedown', (evt) => {
+  evt.preventDefault();
+  if (modalList.classList.contains('modal__list--hide')) {
+    modalList.classList.remove('modal__list--hide');
+    setTimeout(() => {
+      modalList.classList.remove('modal__list--close');
+    }, 10);
+  }
+});
+
+modalSelect.addEventListener('keydown', (evt) => {
+  if ((evt.key === 'Enter' || evt.key === ' ')) {
+    evt.preventDefault();
+  }
+});
+
+modal.addEventListener('click', (evt) => {
+  if (evt.target.className.includes('modal__item') ||
+      !evt.target.className.includes('modal__item') && !evt.target.className.includes('modal__select')) {
+    const currentElement = modal.querySelector('.modal__item--active');
+    if (currentElement.textContent !== '') {
+      modalSelect.classList.remove('modal__select--error');
+    }
+    modalList.classList.add('modal__list--close');
+    setTimeout(() => {
+      modalList.classList.add('modal__list--hide');
+    }, 250);
+  }
+});
+
+modalControl.addEventListener('change', () => {
+  if (modalMark.classList.contains('modal__mark--error') && modalControl.checked) {
+    modalMark.classList.remove('modal__mark--error');
   }
 });
