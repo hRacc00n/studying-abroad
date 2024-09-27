@@ -32,12 +32,14 @@
 
 .modal__close-button {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 16px;
-  height: 16px;
-  border: none;
+  top: 17px;
+  right: 17px;
+  width: 22px;
+  height: 22px;
   background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: all;
   cursor: pointer;
 
   &::before,
@@ -55,6 +57,28 @@
 
   &::after {
     rotate: -45deg;
+  }
+
+  &:hover {
+    opacity: 0.7;
+    border: 1px solid $primary;
+    transition: opacity 0.3s, border-color 0.3s;
+  }
+
+  &:focus-visible {
+    background-color: $white;
+    transition: background-color 0.3s;
+  }
+
+  &:active {
+    background-color: $primary;
+    transition: background-color 0.3s;
+
+    &::after,
+    &::before {
+      background-color: $white;
+      transition: background-color 0.3s;
+    }
   }
 }
 
@@ -99,15 +123,88 @@
   color: $text;
   border: 1px solid rgb(72, 72, 72, 0.3);
   border-radius: 8px;
+  transition: border-color 0.3s;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    border-color: $text;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  &:disabled {
+    background: rgba(169, 175, 183, 0.2);
+    border: 1px solid rgba(169, 175, 183, 0.5);
+  }
+
+  &--error {
+    background: rgba(255, 94, 102, 0.2);
+    border-color: $state-error;
+  }
+}
+
+.modal__select-wrapper {
+  position: relative;
+  margin-bottom: 16px;
 }
 
 .modal__select {
-  margin-bottom: 16px;
+  width: 100%;
   padding: 13px 25px 8px;
   font-family: $basic-font;
   color: $text;
   border: 1px solid rgb(72, 72, 72, 0.3);
   border-radius: 8px;
+
+  &--error {
+    background-color: rgba(255, 94, 102, 0.2);
+    border: 1px solid $state-error;
+  }
+}
+
+.modal__list {
+  @include list-resseting;
+
+  position: absolute;
+  top: calc(100% + 4px);
+  width: 260px;
+  height: 168px;
+  background-color: $white;
+  border: 1px solid $text;
+  border-radius: 8px;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+  z-index: 3;
+}
+
+.modal__item {
+  padding: 14px 14px 14px 20px;
+  min-height: 42px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: $text;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &--active {
+    color: $white;
+    background-color: $primary;
+    transition: color 0.3s, background-color 0.3s;
+  }
+
+  &:not(.modal__item--active):hover {
+    color: $primary;
+    transition: color 0.3s;
+  }
+
+  &:focus-visible,
+  &:active {
+    color: $white;
+    background-color: $primary;
+    transition: color 0.3s, background-color 0.3s;
+  }
 }
 
 .modal__lable--checkbox {

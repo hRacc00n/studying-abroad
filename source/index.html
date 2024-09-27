@@ -257,7 +257,8 @@
 
     <div data-test="footer">footer</div>
 
-    <div class="modal modal--close modal--hide">
+    <!-- <div class="modal modal--close modal--hide"> -->
+    <div class="modal">
       <div class="modal__container">
         <button class="modal__close-button" type="button">
           <span class="visually-hidden">Закрыть окно</span>
@@ -275,7 +276,25 @@
           <input class="modal__input modal__input--phone" type="number" name="phone" id="phone" required>
 
           <label class="modal__label" for="city">Выберите город</label>
-          <select class="modal__select" name="city" id="city"></select>
+          <div class="modal__select-wrapper">
+            <select class="modal__select" name="city" id="city">
+              <option class="modal__option" value="empty" tabindex="-1" aria-hidden="true" selected></option>
+              <option class="modal__option" value="Saint-Petersburg" tabindex="-1" aria-hidden="true">Санкт-Петербург</option>
+              <option class="modal__option" value="Vyborg" tabindex="-1" aria-hidden="true">Выборг</option>
+              <option class="modal__option" value="Salou" tabindex="-1" aria-hidden="true">Салоу</option>
+              <option class="modal__option" value="Moscow" tabindex="-1" aria-hidden="true">Москва</option>
+              <option class="modal__option" value="Petrozavodsk" tabindex="-1" aria-hidden="true">Петрозаводск</option>
+            </select>
+
+            <ul class="modal__list">
+              <li class="modal__item modal__item--active" data-name="empty"></li>
+              <li class="modal__item" data-name="Saint-Petersburg">Санкт-Петербург</li>
+              <li class="modal__item" data-name="Vyborg">Выборг</li>
+              <li class="modal__item" data-name="Salou">Салоу</li>
+              <li class="modal__item" data-name="Moscow">Москва</li>
+              <li class="modal__item" data-name="Petrozavodsk">Петрозаводск</li>
+            </ul>
+          </div>
 
           <label class="modal__label modal__lable--checkbox">
             <input class="modal__control visually-hidden " type="checkbox" name="agree">
