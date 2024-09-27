@@ -63,6 +63,6 @@ modalList.addEventListener('click', (evt) => {
     modalSelect.value = evt.target.dataset.name;
 
     modal.querySelector('.modal__item--active').classList.toggle('modal__item--active');
-    evt.target.classList.toggle('modal__item--active');тз
+    evt.target.classList.toggle('modal__item--active');
   }
 });
