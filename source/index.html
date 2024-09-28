@@ -37,7 +37,7 @@
 
           <ul class="header__menu">
             <li class="header__item">
-              <a class="header__link" href="#">О проекте</a>
+              <a class="header__link" href="#about">О проекте</a>
             </li>
 
             <li class="header__item header__item--submenu">
@@ -211,7 +211,7 @@
     </header>
 
     <main>
-      <section class="about" data-test="about">
+      <section class="about" id="about" data-test="about">
         <div class="about__container">
           <div class="about__main">
             <h2 class="about__title">О проекте «Стажировка»</h2>
@@ -257,8 +257,7 @@
 
     <div data-test="footer">footer</div>
 
-    <!-- <div class="modal modal--close modal--hide"> -->
-    <div class="modal">
+    <div class="modal modal--close modal--hide">
       <div class="modal__container">
         <button class="modal__close-button" type="button">
           <span class="visually-hidden">Закрыть окно</span>
@@ -289,11 +288,11 @@
 
             <ul class="modal__list modal__list--close modal__list--hide">
               <li class="modal__item modal__item--active" data-name="empty"></li>
-              <li class="modal__item" data-name="Saint-Petersburg">Санкт-Петербург</li>
-              <li class="modal__item" data-name="Vyborg">Выборг</li>
-              <li class="modal__item" data-name="Salou">Салоу</li>
-              <li class="modal__item" data-name="Moscow">Москва</li>
-              <li class="modal__item" data-name="Petrozavodsk">Петрозаводск</li>
+              <li class="modal__item" data-name="Saint-Petersburg" tabindex="0">Санкт-Петербург</li>
+              <li class="modal__item" data-name="Vyborg" tabindex="0">Выборг</li>
+              <li class="modal__item" data-name="Salou" tabindex="0">Салоу</li>
+              <li class="modal__item" data-name="Moscow" tabindex="0">Москва</li>
+              <li class="modal__item" data-name="Petrozavodsk" tabindex="0">Петрозаводск</li>
             </ul>
           </div>
 
