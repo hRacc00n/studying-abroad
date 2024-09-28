@@ -13,5 +13,7 @@ const nameInput = modal.querySelector('#name');
 const modalSelect = modal.querySelector('#city');
 const modalMark = modal.querySelector('.modal__mark');
 const modalControl = modal.querySelector('.modal__control');
+const modalInputs = modal.querySelectorAll('.modal__input');
+const modalButton = modal.querySelector('.modal__button');
 
-export { burgerButton, headerButtonContainer, headerMenu, headerLinks, headerContent, heroWrapper, modal, aboutButton, form, currentPhone, phoneInput, nameInput, modalSelect, modalMark, modalControl };
+export { burgerButton, headerButtonContainer, headerMenu, headerLinks, headerContent, heroWrapper, modal, aboutButton, form, currentPhone, phoneInput, nameInput, modalSelect, modalMark, modalControl, modalInputs, modalButton };

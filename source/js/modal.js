@@ -1,10 +1,14 @@
-import { aboutButton, currentPhone, form, modal, modalControl, modalMark, modalSelect, nameInput, phoneInput } from './variables';
+import { aboutButton, currentPhone, form, modal, modalButton, modalControl, modalInputs, modalMark, modalSelect, nameInput, phoneInput } from './variables';
 
 const resetValues = () => {
   nameInput.value = '';
   phoneInput.value = '';
   modalSelect.value = 'empty';
   modalControl.checked = false;
+  nameInput.classList.remove('modal__input--error');
+  phoneInput.classList.remove('modal__input--error');
+  modalSelect.classList.remove('modal__select--error');
+  modalMark.classList.remove('modal__mark--error');
 };
 
 const openModal = () => {
@@ -52,7 +56,19 @@ phoneInput.addEventListener('input', () => {
   }
 });
 
+modalButton.addEventListener('click', () => {
+  modalInputs.forEach((input) => {
+    if (!input.value) {
+      input.classList.add('modal__input--error');
+    }
+    if (modalSelect.value === 'empty') {
+      modalSelect.classList.add('modal__select--error');
+    }
+  });
+});
+
 form.addEventListener('submit', (evt) => {
+
   if (!checkInput(phoneInput, currentPhone)) {
     addInputClass(phoneInput, evt);
   }
@@ -140,6 +156,12 @@ modal.addEventListener('click', (evt) => {
 modalControl.addEventListener('change', () => {
   if (modalMark.classList.contains('modal__mark--error') && modalControl.checked) {
     modalMark.classList.remove('modal__mark--error');
+  }
+});
+
+nameInput.addEventListener('input', () => {
+  if (nameInput.classList.contains('modal__input--error') && nameInput.value) {
+    nameInput.classList.remove('modal__input--error');
   }
 });
 
