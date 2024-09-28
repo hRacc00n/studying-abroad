@@ -1,0 +1,366 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  padding: 23px 15px;
+  translate: -50% -50%;
+  z-index: 5;
+  background-color: rgb(45, 56, 63, 0.7);
+  opacity: 1;
+  transition: opacity 0.3s;
+
+  &--close {
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &--hide {
+    display: none;
+  }
+
+  @media ($tablet) {
+    padding: 204px 129px 180px;
+  }
+}
+
+.modal__container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 290px;
+  margin: 0 auto;
+  padding: 36px 15px 40px;
+  background-color: $white;
+  border-radius: 16px;
+  translate: -50% -50%;
+
+  @media ($tablet) {
+    width: 510px;
+    padding: 55px 80px 40px;
+  }
+}
+
+.modal__close-button {
+  position: absolute;
+  top: 17px;
+  right: 17px;
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  transition: all;
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 17px;
+    height: 1px;
+    background-color: $primary;
+    translate: -50% -50%;
+    rotate: 45deg;
+  }
+
+  &::after {
+    rotate: -45deg;
+  }
+
+  &:hover {
+    opacity: 0.7;
+    border: 1px solid $primary;
+    transition: opacity 0.3s, border-color 0.3s;
+  }
+
+  &:focus-visible {
+    background-color: $white;
+    transition: background-color 0.3s;
+  }
+
+  &:active {
+    background-color: $primary;
+    transition: background-color 0.3s;
+
+    &::after,
+    &::before {
+      background-color: $white;
+      transition: background-color 0.3s;
+    }
+  }
+
+  @media ($tablet) {
+    top: 25px;
+    right: 27px;
+    width: 28px;
+    height: 28px;
+
+    &::before,
+    &::after {
+      width: 25px;
+    }
+  }
+}
+
+.modal__title {
+  margin: 0;
+  margin-bottom: 13px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  color: $primary;
+  text-align: center;
+
+  @media ($tablet) {
+    margin-bottom: 17px;
+    font-size: 28px;
+  }
+}
+
+.modal__text {
+  width: 220px;
+  margin: 0 auto 26px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  color: $text;
+  text-align: center;
+
+  @media ($tablet) {
+    width: 350px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__label {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: $text;
+  opacity: 0.8;
+
+  @media ($tablet) {
+    margin-bottom: 16px;
+  }
+}
+
+.modal__input {
+  margin-bottom: 15px;
+  padding: 13px 25px;
+  font-family: $basic-font;
+  color: $text;
+  border: 1px solid rgb(72, 72, 72, 0.3);
+  border-radius: 8px;
+  transition: border-color 0.3s;
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    border-color: $text;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  &:disabled {
+    background: rgba(169, 175, 183, 0.2);
+    border: 1px solid rgba(169, 175, 183, 0.5);
+  }
+
+  &--error {
+    background: rgba(255, 94, 102, 0.2);
+    border-color: $state-error;
+  }
+
+  @media ($tablet) {
+    margin-bottom: 21px;
+    padding: 16px 25px;
+  }
+}
+
+.modal__select-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.modal__select {
+  width: 100%;
+  padding: 10px 25px 11px;
+  font-family: $basic-font;
+  color: $text;
+  border: 1px solid rgb(72, 72, 72, 0.3);
+  border-radius: 8px;
+
+  &--error {
+    background-color: rgba(255, 94, 102, 0.2);
+    border: 1px solid $state-error;
+  }
+
+  @media ($tablet) {
+    margin-bottom: 5px;
+    padding: 14px 25px 15px;
+  }
+}
+
+.modal__option {
+  display: none;
+}
+
+.modal__list {
+  @include list-resseting;
+
+  position: absolute;
+  top: calc(100% + 4px);
+  width: 260px;
+  height: 168px;
+  background-color: $white;
+  border: 1px solid $text;
+  border-radius: 8px;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+  z-index: 3;
+  transition: height 0.3s;
+
+  @media ($tablet) {
+    width: 350px;
+  }
+}
+
+.modal__list--close {
+  height: 0;
+  transition: height 0.3s;
+}
+
+.modal__list--hide {
+  display: none;
+}
+
+.modal__item {
+  padding: 14px 14px 14px 20px;
+  min-height: 42px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: $text;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &--active {
+    color: $white;
+    background-color: $primary;
+    transition: color 0.3s, background-color 0.3s;
+  }
+
+  &:not(.modal__item--active):hover {
+    color: $primary;
+    transition: color 0.3s;
+  }
+
+  &:focus-visible,
+  &:active {
+    color: $white;
+    background-color: $primary;
+    transition: color 0.3s, background-color 0.3s;
+  }
+}
+
+.modal__lable--checkbox {
+  display: grid;
+  margin-bottom: 22px;
+  grid-template-columns: 20px 1fr;
+  gap: 10px;
+  cursor: pointer;
+
+  @media ($tablet) {
+    margin-bottom: 27px;
+  }
+}
+
+.modal__control-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  color: $text;
+  opacity: 0.9;
+
+  @media ($tablet) {
+    align-self: center;
+  }
+}
+
+.modal__mark {
+  position: relative;
+  top: -1px;
+  width: 20px;
+  height: 20px;
+  align-self: center;
+  grid-column: 1 / 2;
+  border: 1px solid transparent;
+  background-color: $primary;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.modal__control:checked + .modal__mark {
+  position: relative;
+  background-color: $white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    mask-image: url("/__spritemap#sprite-mark-view");
+    background-color: $primary;
+    translate: -50% -50%;
+  }
+}
+
+.modal__lable--checkbox:hover .modal__mark:not(.modal__mark--error),
+.modal__lable--checkbox:focus-visible .modal__mark:not(.modal__mark--error) {
+  border-color: $white;
+  transition: border-color 0.3s;
+}
+
+.modal__mark--error {
+  background-color: rgba(255, 94, 102, 0.2);
+  border-color: $state-error;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.modal__form:has(.modal__input--phone:focus) .modal__label--phone {
+  position: relative;
+
+  &::before {
+    content: "+7";
+    position: absolute;
+    bottom: -37px;
+    left: 7px;
+  }
+
+  @media ($tablet) {
+    &::before {
+      bottom: -48px;
+    }
+  }
+}
+
+.modal__button {
+  @media ($tablet) {
+    width: 195px;
+    margin: 0 auto;
+  }
+}
