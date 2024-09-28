@@ -40,4 +40,19 @@ heroWrapper.addEventListener('click', (evt) => {
   }
 });
 
+// swiper programs
+
+const swiperPrograms = new Swiper('.programs__swiper', {
+  modules: [Navigation],
+  navigation: {
+    prevEl: '.programs__pagination-button--prev',
+    nextEl: '.programs__pagination-button--next',
+  },
+  scrollbar: {
+    el: '.programs__swiper-scrollbar',
+    draggable: true,
+  },
+  spaceBetween: 15,
+});
+
 export { swiperHero };

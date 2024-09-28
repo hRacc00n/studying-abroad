@@ -41,23 +41,23 @@
             </li>
 
             <li class="header__item header__item--submenu">
-              <a class="header__link header__link--submenu" href="#">Программы</a>
+              <a class="header__link header__link--submenu" href="#programs">Программы</a>
 
               <ul class="header__submenu">
                 <li class="header__subitem">
-                  <a class="header__link" href="#">Стажировки</a>
+                  <a class="header__link" href="#programs">Стажировки</a>
                 </li>
 
                 <li class="header__subitem">
-                  <a class="header__link" href="#">Волонтёрство</a>
+                  <a class="header__link" href="#programs">Волонтёрство</a>
                 </li>
 
                 <li class="header__subitem">
-                  <a class="header__link" href="#">Учёба</a>
+                  <a class="header__link" href="#programs">Учёба</a>
                 </li>
 
                 <li class="header__subitem">
-                  <a class="header__link" href="#">Религия</a>
+                  <a class="header__link" href="#programs">Религия</a>
                 </li>
               </ul>
 
@@ -245,7 +245,67 @@
         </div>
       </section>
 
-      <div data-test="programs">programs</div>
+      <section class="programs" id="programs" data-test="programs">
+
+        <div class="programs__container">
+
+          <div class="programs__swiper swiper">
+
+            <h2 class="programs__title">Программы</h2>
+
+            <a class="programs__link button" href="#">все программы</a>
+
+            <ul class="programs__pagintaions swiper-pagination">
+              <li class="parograms__pagination programs__pagination--prev">
+                <button class="programs__pagination-button programs__pagination-button--prev" type="button">
+                  <span class="visually-hidden">Перейти на пердыдущий слайд</span>
+                </button>
+              </li>
+              <li class="parograms__pagination programs__pagination--next">
+                <button class="programs__pagination-button programs__pagination-button--next" type="button">
+                  <span class="visually-hidden">Перейти на пердыдущий слайд</span>
+                </button>
+              </li>
+            </ul>
+
+            <ul class="programs__swiper-wrapper swiper-wrapper">
+
+              <li class="programs__swiper-slide programs__swiper-slide--internshop swiper-slide">
+                <h3 class="programs__subtitle">Стажировки</h3>
+                <div class="programs__content">
+                  <p>Получите незаменимый опыт работы в крупнейших мировых компаниях.</p>
+                  <a class="programs__sublink" href="#">
+                    <span class="visually-hidden">Перейти на страницу стажировки</span>
+                  </a>
+                </div>
+              </li>
+
+              <li class="programs__swiper-slide programs__swiper-slide--volunteering swiper-slide">
+                <h3 class="programs__subtitle">Волонтёрство</h3>
+                <div class="programs__content">
+                  <p>Помогайте другим и развивайте свои лидерские качества</p>
+                  <a class="programs__sublink" href="#">
+                    <span class="visually-hidden">Перейти на страницу волонтерство</span>
+                  </a>
+                </div>
+              </li>
+
+              <li class="programs__swiper-slide programs__swiper-slide--studies swiper-slide">
+                <h3 class="programs__subtitle">Учёба</h3>
+                <div class="programs__content">
+                  <p>Получите образование и измените своё будущее.</p>
+                  <a class="programs__sublink" href="#">
+                    <span class="visually-hidden">Перейти на страницу учебы</span>
+                  </a>
+                </div>
+              </li>
+
+            </ul>
+
+            <div class="programs__swiper-scrollbar swiper-scrollbar"></div>
+          </div>
+        </div>
+      </section>
 
       <div data-test="grant">grant</div>
       <div data-test="news">news</div>
