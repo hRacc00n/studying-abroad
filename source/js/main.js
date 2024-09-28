@@ -43,13 +43,6 @@ const closeModal = () => {
   }, 300);
 };
 
-// const checkInput = (element, currentElement, evt) => {
-//   if (!currentElement.test(element.value) || element.value === '') {
-//     evt.preventDefault();
-//     element.classList.add('modal__input--error');
-//   }
-// };
-
 const checkInput = (element, currentElement) => {
   if (currentElement.test(element.value) || element.value === '') {
     return true;
@@ -61,11 +54,6 @@ const addInputClass = (element, evt) => {
   evt.preventDefault();
   element.classList.add('modal__input--error');
 };
-
-
-
-
-
 
 aboutButton.addEventListener('click', () => {
   openModal();
@@ -85,20 +73,6 @@ phoneInput.addEventListener('input', () => {
     phoneInput.classList.remove('modal__input--error');
   }
 });
-
-// form.addEventListener('submit', (evt) => {
-//   checkInput(phoneInput, currentPhone, evt);
-
-//   if (modalSelect.value === 'empty') {
-//     modalSelect.classList.add('modal__select--error');
-//     evt.preventDefault();
-//   }
-
-//   if (!modalControl.checked){
-//     evt.preventDefault();
-//     modalMark.classList.add('modal__mark--error');
-//   }
-// });
 
 form.addEventListener('submit', (evt) => {
   if (!checkInput(phoneInput, currentPhone)) {

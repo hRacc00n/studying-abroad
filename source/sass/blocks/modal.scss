@@ -19,15 +19,27 @@
   &--hide {
     display: none;
   }
+
+  @media ($tablet) {
+    padding: 204px 129px 180px;
+  }
 }
 
 .modal__container {
-  position: relative;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   width: 290px;
   margin: 0 auto;
   padding: 36px 15px 40px;
   background-color: $white;
   border-radius: 16px;
+  translate: -50% -50%;
+
+  @media ($tablet) {
+    width: 510px;
+    padding: 55px 80px 40px;
+  }
 }
 
 .modal__close-button {
@@ -80,6 +92,18 @@
       transition: background-color 0.3s;
     }
   }
+
+  @media ($tablet) {
+    top: 25px;
+    right: 27px;
+    width: 28px;
+    height: 28px;
+
+    &::before,
+    &::after {
+      width: 25px;
+    }
+  }
 }
 
 .modal__title {
@@ -90,6 +114,11 @@
   line-height: 1;
   color: $primary;
   text-align: center;
+
+  @media ($tablet) {
+    margin-bottom: 17px;
+    font-size: 28px;
+  }
 }
 
 .modal__text {
@@ -100,6 +129,13 @@
   line-height: 1.43;
   color: $text;
   text-align: center;
+
+  @media ($tablet) {
+    width: 350px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
 }
 
 .modal__form {
@@ -114,6 +150,10 @@
   line-height: 1;
   color: $text;
   opacity: 0.8;
+
+  @media ($tablet) {
+    margin-bottom: 16px;
+  }
 }
 
 .modal__input {
@@ -142,6 +182,11 @@
     background: rgba(255, 94, 102, 0.2);
     border-color: $state-error;
   }
+
+  @media ($tablet) {
+    margin-bottom: 21px;
+    padding: 16px 25px;
+  }
 }
 
 .modal__select-wrapper {
@@ -160,6 +205,11 @@
   &--error {
     background-color: rgba(255, 94, 102, 0.2);
     border: 1px solid $state-error;
+  }
+
+  @media ($tablet) {
+    margin-bottom: 5px;
+    padding: 14px 25px 15px;
   }
 }
 
@@ -181,6 +231,10 @@
   overscroll-behavior: none;
   z-index: 3;
   transition: height 0.3s;
+
+  @media ($tablet) {
+    width: 350px;
+  }
 }
 
 .modal__list--close {
@@ -227,6 +281,10 @@
   grid-template-columns: 20px 1fr;
   gap: 10px;
   cursor: pointer;
+
+  @media ($tablet) {
+    margin-bottom: 27px;
+  }
 }
 
 .modal__control-label {
@@ -235,6 +293,10 @@
   line-height: 1.17;
   color: $text;
   opacity: 0.9;
+
+  @media ($tablet) {
+    align-self: center;
+  }
 }
 
 .modal__mark {
@@ -287,5 +349,18 @@
     position: absolute;
     bottom: -37px;
     left: 7px;
+  }
+
+  @media ($tablet) {
+    &::before {
+      bottom: -48px;
+    }
+  }
+}
+
+.modal__button {
+  @media ($tablet) {
+    width: 195px;
+    margin: 0 auto;
   }
 }
