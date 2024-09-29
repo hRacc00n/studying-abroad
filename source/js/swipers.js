@@ -1,8 +1,9 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 import { heroWrapper } from './variables';
 
 const swiperHero = new Swiper('.hero__swiper', {
@@ -40,4 +41,32 @@ heroWrapper.addEventListener('click', (evt) => {
   }
 });
 
-export { swiperHero };
+// swiper programs
+
+const swiperPrograms = new Swiper('.programs__swiper', {
+  modules: [Navigation, Scrollbar],
+  navigation: {
+    prevEl: '.programs__pagination-button--prev',
+    nextEl: '.programs__pagination-button--next',
+  },
+  scrollbar: {
+    el: '.programs__swiper-scrollbar',
+    draggable: true,
+  },
+  breakpoints: {
+    320: {
+      spaceBetween: 15,
+      slidesPerView: 1,
+    },
+    768: {
+      spaceBetween: 30,
+      slidesPerView: 2,
+    },
+    1440: {
+      spaceBetween: 32,
+      slidesPerView: 3,
+    },
+  }
+});
+
+export { swiperHero, swiperPrograms };
