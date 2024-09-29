@@ -57,14 +57,17 @@ const swiperPrograms = new Swiper('.programs__swiper', {
     320: {
       spaceBetween: 15,
       slidesPerView: 1,
+      simulateTouch: true,
     },
     768: {
       spaceBetween: 30,
       slidesPerView: 2,
+      simulateTouch: true,
     },
     1440: {
       spaceBetween: 32,
       slidesPerView: 3,
+      simulateTouch: false,
     },
   }
 });
