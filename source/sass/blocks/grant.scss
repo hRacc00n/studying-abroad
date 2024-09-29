@@ -11,6 +11,13 @@
     width: 768px;
     padding: 101px 45px 100px;
   }
+
+  @media ($desktop) {
+    display: flex;
+    width: 1440px;
+    padding: 120px 206px 119px 100px;
+    gap: 0 138px;
+  }
 }
 
 .grant__title {
@@ -26,9 +33,15 @@
     font-size: 34px;
     line-height: 1.47;
   }
+
+  @media ($desktop) {
+    margin-bottom: 31px;
+    font-size: 50px;
+    line-height: 1;
+  }
 }
 
-.grant__container > p {
+.grant__header > p {
   margin: 0;
   margin-bottom: 30px;
   font-size: 14px;
@@ -41,6 +54,11 @@
     margin-bottom: 40px;
     font-size: 16px;
     line-height: 1.25;
+  }
+
+  @media ($desktop) {
+    margin-bottom: 39px;
+    line-height: 1.62;
   }
 }
 
@@ -56,6 +74,11 @@
     height: 375px;
     margin-bottom: 50px;
   }
+
+  @media ($desktop) {
+    width: 498px;
+    height: 363px;
+  }
 }
 
 .grant__subtitle {
@@ -70,6 +93,14 @@
     margin-bottom: 45px;
     font-size: 28px;
     line-height: 1;
+  }
+
+  @media ($desktop) {
+    width: 373px;
+    margin-top: 11px;
+    margin-bottom: 54px;
+    font-size: 32px;
+    line-height: 1.12;
   }
 }
 
@@ -87,6 +118,10 @@
     flex-direction: row;
     flex-wrap: wrap;
     gap: 25px 48px;
+  }
+
+  @media ($desktop) {
+    gap: 23px;
   }
 }
 
@@ -136,6 +171,11 @@
       left: -6px;
     }
   }
+
+  @media ($desktop) {
+    width: 478px;
+    padding: 31px 23px 29px 25px;
+  }
 }
 
 .grant__text {
@@ -149,5 +189,10 @@
     width: 253px;
     font-size: 16px;
     line-height: 1.25;
+  }
+
+  @media ($desktop) {
+    width: 426px;
+    line-height: 1.62;
   }
 }

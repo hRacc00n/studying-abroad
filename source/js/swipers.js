@@ -62,6 +62,7 @@ const swiperPrograms = new Swiper('.programs__swiper', {
     768: {
       spaceBetween: 30,
       slidesPerView: 2,
+      simulateTouch: true,
     },
     1440: {
       spaceBetween: 32,
