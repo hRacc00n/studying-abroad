@@ -4,10 +4,12 @@
 // import 'swiper/css';
 import { openModal } from './modal';
 import { onButtonBurgerOpenMenu } from './on-button-burger-open-menu';
-import { swiperHero } from './swipers';
+import { swiperHero, swiperPrograms } from './swipers';
 import { aboutButton, headerButtonContainer,} from './variables';
 
 headerButtonContainer.addEventListener('click', onButtonBurgerOpenMenu);
 swiperHero.update();
+swiperPrograms.update();
+
 aboutButton.addEventListener('click', openModal);
 

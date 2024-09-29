@@ -62,7 +62,11 @@ const swiperPrograms = new Swiper('.programs__swiper', {
       spaceBetween: 30,
       slidesPerView: 2,
     },
+    1440: {
+      spaceBetween: 32,
+      slidesPerView: 3,
+    },
   }
 });
 
-export { swiperHero };
+export { swiperHero, swiperPrograms };
