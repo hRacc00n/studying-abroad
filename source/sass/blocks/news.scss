@@ -1,0 +1,70 @@
+.news__container {
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 15px;
+  overflow: hidden;
+}
+
+.news__header-swiper.swiper {
+  padding: 51px 0 50px;
+  overflow: visible;
+}
+
+.news__title {
+  margin: 0;
+  margin-bottom: 23px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  color: $primary;
+}
+
+.news__header-list.swiper-wrapper {
+  @include list-resseting;
+}
+
+.news__header-item.swiper-slide {
+  max-width: min-content;
+}
+
+.news__header-button {
+  padding: 11px 14px 9px 15px;
+  font-family: $basic-font;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  color: rgb(49, 109, 194, 0.6);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  user-select: none;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &--active {
+    color: $primary;
+    border-color: $primary;
+  }
+
+  &:hover {
+    color: $primary;
+    transition: color 0.3s;
+  }
+
+  &:focus-visible {
+    color: $primary;
+    background-color: $white;
+    border-color: $white;
+    outline: none;
+    transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+  }
+
+  &:active {
+    color: $primary;
+    border-color: $primary;
+    transition: color 0.3s, border-color 0.3s;
+  }
+}

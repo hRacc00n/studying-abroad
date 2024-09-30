@@ -72,4 +72,11 @@ const swiperPrograms = new Swiper('.programs__swiper', {
   }
 });
 
+const swiperNewsHeader = new Swiper('.news__header-swiper', {
+  spaceBetween: 9,
+  slidesPerView: 'auto',
+  simulateTouch: true,
+  grabCursor: true,
+});
+
 export { swiperHero, swiperPrograms };
