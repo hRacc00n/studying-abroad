@@ -1,9 +1,10 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
+import { Navigation, Pagination, Scrollbar, Grid } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import 'swiper/css/grid';
 import { heroWrapper } from './variables';
 
 const swiperHero = new Swiper('.hero__swiper', {
@@ -69,6 +70,51 @@ const swiperPrograms = new Swiper('.programs__swiper', {
       slidesPerView: 3,
       simulateTouch: false,
     },
+  }
+});
+
+const swiperNewsHeader = new Swiper('.news__header-swiper', {
+  spaceBetween: 9,
+  slidesPerView: 'auto',
+  simulateTouch: true,
+  grabCursor: true,
+});
+
+const swiperNews = new Swiper('.news__swiper', {
+  modules: [Grid, Pagination],
+  spaceBetween: 15,
+  pagination: {
+    el: '.news__pagination',
+    dynamicBullets: true,
+    dynamicMainBullets: 2,
+    clickable: true,
+    renderBullet: function(index) {
+      return `<button class="button-swipe button-swipe--${index + 1} swiper-pagination-bullet" type="button">
+                <span>${index + 1}</span>
+                <span class="viasully-hidden">Перейти к ${index + 1} слайду</span>
+              </button>`;
+    },
+  },
+  breakpoints: {
+    320: {
+      grid: {
+        rows: 1,
+      },
+      slidesPerView: 1,
+    },
+    768: {
+      grid: {
+        rows: 2,
+        fill: 'row',
+      },
+      slidesPerView: 1,
+    },
+    1440: {
+      grid: {
+        rows: 1,
+      },
+      slidesPerView: 1.5,
+    }
   }
 });
 
