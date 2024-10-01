@@ -49,6 +49,7 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-align: center;
+  background-color: $beige;
   border: 2px solid transparent;
   border-radius: 20px;
   user-select: none;
@@ -80,17 +81,22 @@
   }
 }
 
+.news__swiper.swiper {
+  height: 679px;
+}
 
 .news__swiper-wrapper.swiper-wrapper {
   @include list-resseting;
 
   padding: 0 0 50px;
+  flex-direction: unset;
+  flex-wrap: wrap;
 }
 
 .news__swiper-slide.swiper-slide {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  // display: flex;
+  // flex-direction: column;
+  // gap: 20px;
 }
 
 .news__block {
@@ -126,7 +132,7 @@
   }
 }
 
-.news__swiper-slide.swiper-slide .news__block:first-child {
+.news__swiper-slide.swiper-slide:nth-child(odd) .news__block {
   height: 330px;
 }
 

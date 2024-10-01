@@ -1,10 +1,10 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Scrollbar, Grid } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/grid';
+import 'swiper/css/bundle';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/scrollbar';
+// import 'swiper/css/grid';
 import { heroWrapper } from './variables';
 
 const swiperHero = new Swiper('.hero__swiper', {
@@ -82,7 +82,7 @@ const swiperNewsHeader = new Swiper('.news__header-swiper', {
 
 const swiperNews = new Swiper('.news__swiper', {
   modules: [Grid, Pagination],
-  spaceBetween: 15,
+  spaceBetween: 20,
   pagination: {
     el: '.news__pagination',
     dynamicBullets: true,
@@ -90,31 +90,17 @@ const swiperNews = new Swiper('.news__swiper', {
     clickable: true,
     renderBullet: function(index) {
       return `<button class="button-swipe button-swipe--${index + 1} swiper-pagination-bullet" type="button">
-                <span>${index + 1}</span>
-                <span class="viasully-hidden">Перейти к ${index + 1} слайду</span>
+                <span class="visually-hidden">Перейти к слайду №</span> ${index + 1}
               </button>`;
     },
   },
   breakpoints: {
     320: {
       grid: {
-        rows: 1,
-      },
-      slidesPerView: 1,
-    },
-    768: {
-      grid: {
         rows: 2,
-        fill: 'row',
       },
       slidesPerView: 1,
     },
-    1440: {
-      grid: {
-        rows: 1,
-      },
-      slidesPerView: 1.5,
-    }
   }
 });
 
