@@ -78,11 +78,18 @@ const swiperNewsHeader = new Swiper('.news__header-swiper', {
   slidesPerView: 'auto',
   simulateTouch: true,
   grabCursor: true,
+  breakpoints: {
+    320: {
+      enabled: true,
+    },
+    768: {
+      enabled: false,
+    },
+  }
 });
 
 const swiperNews = new Swiper('.news__swiper', {
   modules: [Grid, Pagination],
-  spaceBetween: 20,
   pagination: {
     el: '.news__pagination',
     dynamicBullets: true,
@@ -98,9 +105,19 @@ const swiperNews = new Swiper('.news__swiper', {
     320: {
       grid: {
         rows: 2,
+        fill: 'column',
       },
       slidesPerView: 1,
+      spaceBetween: 20,
     },
+    768: {
+      grid: {
+        rows: 2,
+        fill: 'row',
+      },
+      slidesPerView: 2,
+      spaceBetween: 30,
+    }
   }
 });
 

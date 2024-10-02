@@ -19,6 +19,10 @@
 .news__header-swiper.swiper {
   padding: 51px 0 24px;
   overflow: visible;
+
+  @media ($tablet) {
+    padding: 51px 0 30px;
+  }
 }
 
 .news__title {
@@ -29,14 +33,35 @@
   line-height: 1;
   text-align: center;
   color: $primary;
+
+  @media ($tablet) {
+    margin-bottom: 29px;
+    font-size: 34px;
+    line-height: 1.47;
+  }
 }
 
 .news__header-list.swiper-wrapper {
   @include list-resseting;
+
+  @media ($tablet) {
+    display: flex;
+    position: relative;
+    left: 2px;
+    flex-wrap: wrap;
+  }
 }
 
 .news__header-item.swiper-slide {
   max-width: min-content;
+}
+
+.news__header-item.swiper-slide:not(:first-child) > .news__header-button {
+  padding: 14px 17px 14px 20px;
+}
+
+.news__header-item.swiper-slide:not(:first-child):last-child > .news__header-button {
+  padding: 14px 12px 14px 20px;
 }
 
 .news__header-button {
@@ -79,10 +104,19 @@
     border-color: $primary;
     transition: color 0.3s, border-color 0.3s;
   }
+
+  @media ($tablet) {
+    padding: 14px 20px;
+    font-size: 14px;
+  }
 }
 
 .news__swiper.swiper {
   height: 679px;
+
+  @media ($tablet) {
+    height: 730px;
+  }
 }
 
 .news__swiper-wrapper.swiper-wrapper {
@@ -130,10 +164,91 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+
+  &--volunteering {
+    background-image:
+      image-set(
+        url("../../img/news/volunteering-mobile@1x.webp") type("image/webp") 1x,
+        url("../../img/news/volunteering-mobile@2x.webp") type("image/webp") 2x,
+        url("../../img/news/volunteering-mobile@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/news/volunteering-mobile@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &--career {
+    background-image:
+      image-set(
+        url("../../img/news/career-mobile@1x.webp") type("image/webp") 1x,
+        url("../../img/news/career-mobile@2x.webp") type("image/webp") 2x,
+        url("../../img/news/career-mobile@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/news/career-mobile@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  @media ($tablet) {
+    width: 324px;
+    height: 350px;
+
+    &--internship {
+      background-image:
+        image-set(
+          url("../../img/news/internshop-tablet@1x.webp") type("image/webp") 1x,
+          url("../../img/news/internshop-tablet@2x.webp") type("image/webp") 2x,
+          url("../../img/news/internshop-tablet@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/news/internshop-tablet@2x.jpg") type("image/jpeg") 2x
+        );
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &--journey {
+      background-image:
+        image-set(
+          url("../../img/news/journey-tablet@1x.webp") type("image/webp") 1x,
+          url("../../img/news/journey-tablet@2x.webp") type("image/webp") 2x,
+          url("../../img/news/journey-tablet@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/news/journey-tablet@2x.jpg") type("image/jpeg") 2x
+        );
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &--volunteering {
+      background-image:
+        image-set(
+          url("../../img/news/volunteering-tablet@1x.webp") type("image/webp") 1x,
+          url("../../img/news/volunteering-tablet@2x.webp") type("image/webp") 2x,
+          url("../../img/news/volunteering-tablet@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/news/volunteering-tablet@2x.jpg") type("image/jpeg") 2x
+        );
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &--career {
+      background-image:
+        image-set(
+          url("../../img/news/career-tablet@1x.webp") type("image/webp") 1x,
+          url("../../img/news/career-tablet@2x.webp") type("image/webp") 2x,
+          url("../../img/news/career-tablet@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/news/career-tablet@2x.jpg") type("image/jpeg") 2x
+        );
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
 }
 
 .news__swiper-slide.swiper-slide:nth-child(odd) .news__block {
   height: 330px;
+
+  @media ($tablet) {
+    height: 350px;
+  }
 }
 
 .news__date {
@@ -195,6 +310,13 @@
     background-color: $beige;
     clip-path: polygon(100% 100%, 100% 100%, 83.78% 98.69%, 68.39% 94.9%, 54.04% 88.84%, 40.94% 80.71%, 29.29% 70.71%, 19.29% 59.06%, 11.16% 45.96%, 5.1% 31.61%, 1.31% 16.22%, 0% 0%, 0% 100%, 100% 100%);
   }
+
+  @media ($tablet) {
+    width: 207px;
+    padding: 11px 28px 4px 0;
+    font-size: 20px;
+    line-height: 1.2;
+  }
 }
 
 .news__block-wrapper {
@@ -216,6 +338,11 @@
     background-color: $beige;
     clip-path: polygon(100% 100%, 100% 100%, 83.78% 98.69%, 68.39% 94.9%, 54.04% 88.84%, 40.94% 80.71%, 29.29% 70.71%, 19.29% 59.06%, 11.16% 45.96%, 5.1% 31.61%, 1.31% 16.22%, 0% 0%, 0% 100%, 100% 100%);
   }
+
+  @media ($tablet) {
+    width: 240px;
+    padding: 13px 18px 15px 0;
+  }
 }
 
 .news__block-wrapper p {
@@ -225,6 +352,12 @@
   font-weight: 400;
   line-height: 1.17;
   color: $text;
+
+  @media ($tablet) {
+    width: 176px;
+    font-size: 14px;
+    line-height: 1.43;
+  }
 }
 
 .news__sublink {
