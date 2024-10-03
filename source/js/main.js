@@ -13,3 +13,16 @@ swiperPrograms.update();
 
 aboutButton.addEventListener('click', openModal);
 
+// new__hero-list
+
+const heroList = document.querySelector('.news__header-list');
+
+heroList.addEventListener('click', (evt) => {
+  if (evt.target.className.includes('news__header-button')) {
+    console.log('ok');
+
+    const currentItem = heroList.querySelector('.news__header-button--active');
+    currentItem.classList.remove('news__header-button--active');
+    evt.target.classList.add('news__header-button--active');
+  }
+});

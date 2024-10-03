@@ -1,9 +1,10 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination, Scrollbar } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import { Navigation, Pagination, Scrollbar, Grid } from 'swiper/modules';
+import 'swiper/css/bundle';
+// import 'swiper/css/navigation';
+// import 'swiper/css/pagination';
+// import 'swiper/css/scrollbar';
+// import 'swiper/css/grid';
 import { heroWrapper } from './variables';
 
 const swiperHero = new Swiper('.hero__swiper', {
@@ -70,6 +71,70 @@ const swiperPrograms = new Swiper('.programs__swiper', {
       simulateTouch: false,
     },
   }
+});
+
+const swiperNewsHeader = new Swiper('.news__header-swiper', {
+  slidesPerView: 'auto',
+  simulateTouch: true,
+  grabCursor: true,
+  breakpoints: {
+    320: {
+      enabled: true,
+      spaceBetween: 9,
+    },
+    768: {
+      enabled: false,
+      spaceBetween: 9,
+    },
+    1440: {
+      enabled: false,
+      spaceBetween: 0,
+    }
+  }
+});
+
+const swiperNews = new Swiper('.news__swiper', {
+  modules: [Grid, Pagination],
+  pagination: {
+    el: '.news__pagination',
+    dynamicBullets: true,
+    dynamicMainBullets: 2,
+    clickable: true,
+    renderBullet: function(index) {
+      return `<button class="button-swipe button-swipe--${index + 1} swiper-pagination-bullet" type="button">
+                <span class="visually-hidden">Перейти к слайду №</span> ${index + 1}
+              </button>`;
+    },
+  },
+  breakpoints: {
+    320: {
+      grid: {
+        rows: 2,
+        fill: 'column',
+      },
+      slidesPerView: 1,
+      spaceBetween: 20,
+    },
+    768: {
+      grid: {
+        rows: 2,
+        fill: 'row',
+      },
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    1440: {
+      grid: {
+        rows: 1,
+      },
+      slidesPerView: 'auto',
+      spaceBetween: 32,
+    }
+  }
+});
+
+window.addEventListener('resize', () => {
+  swiperNews.update();
 });
 
 export { swiperHero, swiperPrograms };
