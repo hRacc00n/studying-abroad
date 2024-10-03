@@ -23,6 +23,10 @@
   @media ($tablet) {
     padding: 51px 0 30px;
   }
+
+  @media ($desktop) {
+    padding: 60px 0 40px;
+  }
 }
 
 .news__title {
@@ -39,6 +43,12 @@
     font-size: 34px;
     line-height: 1.47;
   }
+
+  @media ($desktop) {
+    margin-bottom: 40px;
+    font-size: 50px;
+    line-height: 1;
+  }
 }
 
 .news__header-list.swiper-wrapper {
@@ -50,6 +60,13 @@
     left: 2px;
     flex-wrap: wrap;
   }
+
+  @media ($desktop) {
+    left: 0;
+    width: 720px;
+    margin: 0 auto;
+    gap: 30px;
+  }
 }
 
 .news__header-item.swiper-slide {
@@ -57,11 +74,23 @@
 }
 
 .news__header-item.swiper-slide:not(:first-child) > .news__header-button {
-  padding: 14px 17px 14px 20px;
+  @media ($tablet) {
+    padding: 14px 17px 14px 20px;
+  }
+
+  @media ($desktop) {
+    padding: 14px 0;
+  }
 }
 
 .news__header-item.swiper-slide:not(:first-child):last-child > .news__header-button {
-  padding: 14px 12px 14px 20px;
+  @media ($tablet) {
+    padding: 14px 12px 14px 20px;
+  }
+
+  @media ($desktop) {
+    padding: 14px 0;
+  }
 }
 
 .news__header-button {
@@ -109,6 +138,11 @@
     padding: 14px 20px;
     font-size: 14px;
   }
+
+  @media ($desktop) {
+    min-width: 120px;
+    padding: 14px 33px;
+  }
 }
 
 .news__swiper.swiper {
@@ -116,6 +150,10 @@
 
   @media ($tablet) {
     height: 730px;
+  }
+
+  @media ($desktop) {
+    height: 400px;
   }
 }
 
@@ -125,12 +163,29 @@
   padding: 0 0 50px;
   flex-direction: unset;
   flex-wrap: wrap;
+
+  @media ($desktop) {
+    width: 1240px;
+    flex-wrap: nowrap;
+  }
 }
 
 .news__swiper-slide.swiper-slide {
   // display: flex;
   // flex-direction: column;
   // gap: 20px;
+}
+
+.news__swiper-wrapper.swiper-wrapper > .news__swiper-slide.swiper-slide.swiper-slide-active {
+  @media ($desktop) {
+    min-width: 604px;
+  }
+}
+
+.news__swiper-wrapper.swiper-wrapper > .news__swiper-slide.swiper-slide {
+  @media ($desktop) {
+    max-width: 286px;
+  }
 }
 
 .news__block {
@@ -241,6 +296,58 @@
       background-size: cover;
     }
   }
+
+  @media ($desktop) {
+    width: 286px;
+
+    &--internship {
+      background-image:
+        image-set(
+          url("../../img/news/internshop-desktop@1x.webp") type("image/webp") 1x,
+          url("../../img/news/internshop-desktop@2x.webp") type("image/webp") 2x,
+          url("../../img/news/internshop-desktop@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/news/internshop-desktop@2x.jpg") type("image/jpeg") 2x
+        );
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &--journey {
+      background-image:
+        image-set(
+          url("../../img/news/journey-desktop@1x.webp") type("image/webp") 1x,
+          url("../../img/news/journey-desktop@2x.webp") type("image/webp") 2x,
+          url("../../img/news/journey-desktop@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/news/journey-desktop@2x.jpg") type("image/jpeg") 2x
+        );
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &--volunteering {
+      background-image:
+        image-set(
+          url("../../img/news/volunteering-desktop@1x.webp") type("image/webp") 1x,
+          url("../../img/news/volunteering-desktop@2x.webp") type("image/webp") 2x,
+          url("../../img/news/volunteering-desktop@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/news/volunteering-desktop@2x.jpg") type("image/jpeg") 2x
+        );
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    &--career {
+      background-image:
+        image-set(
+          url("../../img/news/career-tablet@1x.webp") type("image/webp") 1x,
+          url("../../img/news/career-tablet@2x.webp") type("image/webp") 2x,
+          url("../../img/news/career-tablet@1x.jpg") type("image/jpeg") 1x,
+          url("../../img/news/career-tablet@2x.jpg") type("image/jpeg") 2x
+        );
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
 }
 
 .news__swiper-slide.swiper-slide:nth-child(odd) .news__block {
@@ -248,6 +355,12 @@
 
   @media ($tablet) {
     height: 350px;
+  }
+}
+
+.news__swiper-slide.swiper-slide.swiper-slide-active .news__block {
+  @media ($desktop) {
+    width: 604px;
   }
 }
 

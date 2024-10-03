@@ -74,17 +74,22 @@ const swiperPrograms = new Swiper('.programs__swiper', {
 });
 
 const swiperNewsHeader = new Swiper('.news__header-swiper', {
-  spaceBetween: 9,
   slidesPerView: 'auto',
   simulateTouch: true,
   grabCursor: true,
   breakpoints: {
     320: {
       enabled: true,
+      spaceBetween: 9,
     },
     768: {
       enabled: false,
+      spaceBetween: 9,
     },
+    1440: {
+      enabled: false,
+      spaceBetween: 0,
+    }
   }
 });
 
@@ -117,8 +122,19 @@ const swiperNews = new Swiper('.news__swiper', {
       },
       slidesPerView: 2,
       spaceBetween: 30,
+    },
+    1440: {
+      grid: {
+        rows: 1,
+      },
+      slidesPerView: 'auto',
+      spaceBetween: 32,
     }
   }
+});
+
+window.addEventListener('resize', () => {
+  swiperNews.update();
 });
 
 export { swiperHero, swiperPrograms };
