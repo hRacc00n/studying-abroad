@@ -15,5 +15,7 @@ const modalMark = modal.querySelector('.modal__mark');
 const modalControl = modal.querySelector('.modal__control');
 const modalInputs = modal.querySelectorAll('.modal__input');
 const modalButton = modal.querySelector('.modal__button');
+const heroList = document.querySelector('.news__header-list');
+const faqList = document.querySelector('.faq__list');
 
-export { burgerButton, headerButtonContainer, headerMenu, headerLinks, headerContent, heroWrapper, modal, aboutButton, form, currentPhone, phoneInput, nameInput, modalSelect, modalMark, modalControl, modalInputs, modalButton };
+export { burgerButton, headerButtonContainer, headerMenu, headerLinks, headerContent, heroWrapper, modal, aboutButton, form, currentPhone, phoneInput, nameInput, modalSelect, modalMark, modalControl, modalInputs, modalButton, faqList, heroList };
