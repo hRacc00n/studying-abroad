@@ -133,8 +133,17 @@ const swiperNews = new Swiper('.news__swiper', {
   }
 });
 
-window.addEventListener('resize', () => {
-  swiperNews.update();
+const swiperReviews = new Swiper('.reviews__swiper', {
+  modules: [Navigation, Scrollbar],
+  navigation: {
+    prevEl: '.reviews__pagination-button--prev',
+    nextEl: '.reviews__pagination-button--next',
+  },
+  breakpoints: {
+    320: {
+      spaceBetween: 15,
+    },
+  }
 });
 
-export { swiperHero, swiperPrograms };
+export { swiperHero, swiperPrograms, swiperNewsHeader };

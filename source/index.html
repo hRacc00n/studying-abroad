@@ -255,14 +255,14 @@
 
             <a class="programs__link button" href="#">все программы</a>
 
-            <ul class="programs__pagintaions swiper-pagination">
-              <li class="parograms__pagination programs__pagination--prev">
-                <button class="programs__pagination-button programs__pagination-button--prev" type="button">
+            <ul class="programs__paginations paginations swiper-pagination">
+              <li class="programs__pagination programs__pagination--prev">
+                <button class="programs__pagination-button programs__pagination-button--prev paginations__button paginations__button--prev" type="button">
                   <span class="visually-hidden">Перейти на пердыдущий слайд</span>
                 </button>
               </li>
-              <li class="parograms__pagination programs__pagination--next">
-                <button class="programs__pagination-button programs__pagination-button--next" type="button">
+              <li class="programs__pagination programs__pagination--next">
+                <button class="programs__pagination-button programs__pagination-button--next paginations__button" type="button">
                   <span class="visually-hidden">Перейти на пердыдущий слайд</span>
                 </button>
               </li>
@@ -332,7 +332,7 @@
 
             </ul>
 
-            <div class="programs__swiper-scrollbar swiper-scrollbar"></div>
+            <div class="programs__swiper-scrollbar scrollbar swiper-scrollbar"></div>
           </div>
         </div>
       </section>
@@ -676,7 +676,88 @@
         </div>
       </section>
 
-      <div data-test="reviews">reviews</div>
+      <section class="reviews" data-test="reviews">
+
+        <div class="reviews__container">
+
+          <div class="reviews__swiper swiper">
+            <h2 class="reviews__title">Отзывы</h2>
+
+            <ul class="reviews__paginations paginations swiper-pagination">
+              <li class="reviews__pagination reviews__pagination--prev">
+                <button class="reviews__pagination-button reviews__pagination-button--prev paginations__button paginations__button--prev" type="button">
+                  <span class="visually-hidden">Перейти на пердыдущий слайд</span>
+                </button>
+              </li>
+
+              <li class="reviews__pagination reviews__pagination--next">
+                <button class="reviews__pagination-button reviews__pagination-button--next paginations__button" type="button">
+                  <span class="visually-hidden">Перейти на пердыдущий слайд</span>
+                </button>
+              </li>
+            </ul>
+
+            <ul class="reviews__swiper-wrapper swiper-wrapper">
+
+              <li class="reviews__swiper-slide swiper-slide">
+                <div class="reviews__slide-header">
+                  <picture>
+                    <source type="image/webp" media="(min-width: 768px)" srcset="img/reviews/lola-tablet@1x.webp 1x, img/reviews/lola-tablet@2x.webp 2x" width="90" height="90">
+                    <source type="image/webp" srcset="img/reviews/lola-mobile@1x.webp 1x, img/reviews/lola-mobile@2x.webp 2x" width="60" height="60">
+                    <source type="image/jpeg" media="(min-width: 768px)" srcset="img/reviews/lola-tablet@1x.jpg 1x, img/reviews/lola-tablet@2x.jpg 2x" width="90" height="90">
+                    <img class="reviews__image" src="img/reviews/lola-mobile@1x.jpg" srcset="img/reviews/lola-mobile@2x.jpg 2x" alt="Автор отзыва Лола Алекс" width="60" height="60">
+                  </picture>
+
+                  <p class="reviews__name">Лола<br> Алекс</p>
+
+                  <dl class="reviews__info">
+                    <dt class="reviews__info-name">программа</dt>
+                    <dd class="reviews__info-value">Masa Art Challenge</dd>
+                    <dt class="reviews__info-name">Дата</dt>
+                    <dd class="reviews__info-value">Осень 2022</dd>
+                  </dl>
+                </div>
+
+                <div class="reviews__content">
+                  <p class="reviews__text-title">Я могу с уверенностью сказать, что это был один из самых незабываемых опытов в жизни!</p>
+                  <p>Я рекомендую программу «Стажировка» всем студентам, желающим получить незабываемые впечатления. Сочетание путешествий, общения и значимой работы действительно отличает её от других программ, и я чувствую огромную благодарность за предоставленную мне возможность.</p>
+                </div>
+              </li>
+
+              <li class="reviews__swiper-slide swiper-slide">
+                <div class="reviews__slide-header">
+                  <picture>
+                    <source type="image/webp" srcset="img/reviews/david@1x.webp 1x, img/reviews/david@2x.webp 2x" width="60" height="60">
+                    <img class="reviews__image" src="img/reviews/david@1x.jpg" srcset="img/reviews/david@2x.jpg 2x" alt="Автор отзыва Давид Иванов" width="60" height="60">
+                  </picture>
+
+                  <p class="reviews__name">Давид<br> Иванов</p>
+
+                  <dl class="reviews__info">
+                    <dt class="reviews__info-name">программа</dt>
+                    <dd class="reviews__info-value">Volunteer Chance</dd>
+                    <dt class="reviews__info-name">Дата</dt>
+                    <dd class="reviews__info-value">Лето 2022</dd>
+                  </dl>
+                </div>
+
+                <div class="reviews__content">
+                  <p class="reviews__text-title">Благодаря опыту стажировки я узнал так много нового о себе и об окружающем мире.</p>
+                  <p>Каждый день был возможностью оказать ощутимое влияние на жизнь других людей. Я бы очень рекомендовал эту волонтёрскую программу всем, кто ищет значимый и незабываемый опыт. Организация была на высшем уровне. Для меня было честью быть частью такой удивительной инициативы.</p>
+                </div>
+              </li>
+
+            </ul>
+
+            <div class="reviews__swiper-scrollbar scrollbar swiper-scrollbar"></div>
+
+          </div>
+
+
+        </div>
+
+      </section>
+
       <div data-test="contacts">contacts</div>
       <div data-test="form">form</div>
     </main>

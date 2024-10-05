@@ -1,0 +1,67 @@
+.paginations {
+  @include list-resseting;
+
+  position: relative;
+  display: flex;
+  gap: 6px;
+}
+
+.paginations__button {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  background-color: transparent;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background-color: $primary;
+    mask-image: url("/__spritemap#sprite-arrow-thin-view");
+    rotate: 45deg;
+    transition: all 0.3s;
+    translate: -50% -50%;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+  }
+
+  &:focus-visible {
+    background-color: $white;
+    transition: background-color 0.3s;
+  }
+
+  &:active {
+    background-color: $white;
+    transition: background-color 0.3s;
+
+    &::before {
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+  }
+
+  &:disabled {
+    pointer-events: none;
+
+    &::before {
+      background-color: $state-disabled;
+    }
+  }
+}
+
+.paginations__button--prev::before {
+  rotate: -135deg;
+}
+
