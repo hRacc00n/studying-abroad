@@ -133,8 +133,33 @@ const swiperNews = new Swiper('.news__swiper', {
   }
 });
 
-window.addEventListener('resize', () => {
-  swiperNews.update();
+const swiperReviews = new Swiper('.reviews__swiper', {
+  modules: [Navigation, Scrollbar],
+  navigation: {
+    prevEl: '.reviews__pagination-button--prev',
+    nextEl: '.reviews__pagination-button--next',
+  },
+  scrollbar: {
+    el: '.reviews__swiper-scrollbar',
+    draggable: true,
+  },
+  breakpoints: {
+    320: {
+      spaceBetween: 15,
+      slidesPerView: 1,
+      simulateTouch: true,
+    },
+    768: {
+      spaceBetween: 30,
+      slidesPerView: 1,
+      simulateTouch: true,
+    },
+    1440: {
+      spaceBetween: 32,
+      slidesPerView: 2,
+      simulateTouch: false,
+    },
+  }
 });
 
-export { swiperHero, swiperPrograms };
+export { swiperHero, swiperPrograms, swiperNewsHeader };

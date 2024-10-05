@@ -1,0 +1,16 @@
+.scrollbar.swiper-scrollbar.swiper-scrollbar-horizontal {
+  display: none;
+
+  @media ($tablet) {
+    display: block;
+    max-height: 2px;
+    background-color: rgb(49, 109, 194, 0.2);
+    cursor: pointer;
+  }
+}
+
+
+.scrollbar.swiper-scrollbar > .swiper-scrollbar-drag {
+  background-color: $primary;
+  border-color: $primary;
+}
