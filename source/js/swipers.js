@@ -143,13 +143,21 @@ const swiperReviews = new Swiper('.reviews__swiper', {
     el: '.reviews__swiper-scrollbar',
     draggable: true,
   },
-  autoHeight: true,
   breakpoints: {
     320: {
       spaceBetween: 15,
+      slidesPerView: 1,
+      simulateTouch: true,
     },
     768: {
       spaceBetween: 30,
+      slidesPerView: 1,
+      simulateTouch: true,
+    },
+    1440: {
+      spaceBetween: 32,
+      slidesPerView: 2,
+      simulateTouch: false,
     },
   }
 });
