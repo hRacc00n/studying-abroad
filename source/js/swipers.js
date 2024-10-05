@@ -139,9 +139,17 @@ const swiperReviews = new Swiper('.reviews__swiper', {
     prevEl: '.reviews__pagination-button--prev',
     nextEl: '.reviews__pagination-button--next',
   },
+  scrollbar: {
+    el: '.reviews__swiper-scrollbar',
+    draggable: true,
+  },
+  autoHeight: true,
   breakpoints: {
     320: {
       spaceBetween: 15,
+    },
+    768: {
+      spaceBetween: 30,
     },
   }
 });
