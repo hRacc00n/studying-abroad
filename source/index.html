@@ -35,9 +35,9 @@
 
             <button class="header__button toggle-burger" type="button">
               <span class="visually-hidden">Открыть меню</span>
-              <span class="toggle-burger__line toggle-burger--line1"></span>
-              <span class="toggle-burger__line toggle-burger--line2 header__line"></span>
-              <span class="toggle-burger__line toggle-burger--line3"></span>
+              <span class="toggle-burger__line toggle-burger__line--1"></span>
+              <span class="toggle-burger__line toggle-burger__line--2 header__line"></span>
+              <span class="toggle-burger__line toggle-burger__line--3"></span>
             </button>
           </div>
 
@@ -869,12 +869,12 @@
               <label class="form__label form__label--textarea" for="form-message">Ваше сообщение</label>
               <textarea class="form__input form__input--textarea" name="form-message" id="form-message" required></textarea>
 
-              <label class="form__label" for="city">Выберите город</label>
+              <label class="form__label" for="form-city">Выберите город</label>
 
               <div class="form__select-wrapper">
 
                 <select class="form__select" name="form-city" id="form-city">
-                  <option class="form__option" value="empty" tabindex="-1" aria-hidden="true" selected></option>
+                  <option class="form__option" value="empty" tabindex="-1" aria-hidden="true" selected>&nbsp;</option>
                   <option class="form__option" value="Saint-Petersburg" tabindex="-1" aria-hidden="true">Санкт-Петербург</option>
                   <option class="form__option" value="Vyborg" tabindex="-1" aria-hidden="true">Выборг</option>
                   <option class="form__option" value="Salou" tabindex="-1" aria-hidden="true">Салоу</option>
@@ -892,7 +892,7 @@
                 </ul>
               </div>
 
-              <label class="form__label form__lable--checkbox">
+              <label class="form__label form__label--checkbox">
                 <input class="form__control visually-hidden " type="checkbox" name="form-agree">
                 <span class="form__mark"></span>
                 <span class="form__control-label">Я согласен на обработку моих персональных<br> данных</span>
@@ -983,7 +983,7 @@
           <div class="modal__select-wrapper">
 
             <select class="modal__select" name="city" id="city">
-              <option class="modal__option" value="empty" tabindex="-1" aria-hidden="true" selected></option>
+              <option class="modal__option" value="empty" tabindex="-1" aria-hidden="true" selected>&nbsp;</option>
               <option class="modal__option" value="Saint-Petersburg" tabindex="-1" aria-hidden="true">Санкт-Петербург</option>
               <option class="modal__option" value="Vyborg" tabindex="-1" aria-hidden="true">Выборг</option>
               <option class="modal__option" value="Salou" tabindex="-1" aria-hidden="true">Салоу</option>
@@ -1001,7 +1001,7 @@
             </ul>
           </div>
 
-          <label class="modal__label modal__lable--checkbox">
+          <label class="modal__label modal__label--checkbox">
             <input class="modal__control visually-hidden " type="checkbox" name="agree">
             <span class="modal__mark"></span>
             <span class="modal__control-label">Я согласен на обработку моих персональных данных</span>

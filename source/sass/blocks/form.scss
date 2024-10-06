@@ -311,7 +311,7 @@
   }
 }
 
-.form__lable--checkbox {
+.form__label--checkbox {
   display: grid;
   width: 260px;
   margin-bottom: 19px;
@@ -374,20 +374,20 @@
   }
 }
 
-.form__lable--checkbox:hover .form__mark:not(.form__mark--error),
-.form__lable--checkbox:focus-visible .form__mark:not(.form__mark--error) {
+.form__label--checkbox:hover .form__mark:not(.form__mark--error),
+.form__label--checkbox:focus-visible .form__mark:not(.form__mark--error) {
   border-color: $white;
   transition: border-color 0.3s;
 }
 
-.form__lable--checkbox:disabled {
+.form__label--checkbox:disabled {
   border-color: $white;
   background-color: rgb(255, 255, 255, 0.6);
   transition: border-color 0.3s;
 }
 
-.form__lable--checkbox:hover .form__control:checked + .form__mark,
-.form__lable--checkbox:focus-visible .form__control:checked + .form__mark {
+.form__label--checkbox:hover .form__control:checked + .form__mark,
+.form__label--checkbox:focus-visible .form__control:checked + .form__mark {
   background-color: transparent;
   transition: background-color 0.3s;
 
@@ -397,7 +397,7 @@
   }
 }
 
-.form__lable--checkbox:hover .form__control:checked + .form__mark:disabled {
+.form__label--checkbox:hover .form__control:checked + .form__mark:disabled {
   background-color: $state-disabled;
   transition: background-color 0.3s;
 

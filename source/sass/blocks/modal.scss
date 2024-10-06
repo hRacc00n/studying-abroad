@@ -250,6 +250,10 @@
   display: none;
 }
 
+.modal__option:first-child {
+  color: transparent;
+}
+
 .modal__list {
   @include list-resseting;
 
@@ -308,7 +312,7 @@
   }
 }
 
-.modal__lable--checkbox {
+.modal__label--checkbox {
   display: grid;
   margin-bottom: 22px;
   grid-template-columns: 20px 1fr;
@@ -362,8 +366,8 @@
   }
 }
 
-.modal__lable--checkbox:hover .modal__mark:not(.modal__mark--error),
-.modal__lable--checkbox:focus-visible .modal__mark:not(.modal__mark--error) {
+.modal__label--checkbox:hover .modal__mark:not(.modal__mark--error),
+.modal__label--checkbox:focus-visible .modal__mark:not(.modal__mark--error) {
   border-color: $white;
   transition: border-color 0.3s;
 }

@@ -19,7 +19,7 @@
   transition: background-color 0.3s, width 0.3s, rotate 0.3s;
 }
 
-.toggle-burger--open .toggle-burger--line1 {
+.toggle-burger--open .toggle-burger__line--1 {
   transform-origin: 0 0;
   width: 22px;
   left: 57%;
@@ -28,12 +28,12 @@
   transition: width 0.3s, rotate 0.3s;
 }
 
-.toggle-burger--open .toggle-burger--line2 {
+.toggle-burger--open .toggle-burger__line--2 {
   width: 0;
   transition: width 0.3s;
 }
 
-.toggle-burger--open .toggle-burger--line3 {
+.toggle-burger--open .toggle-burger__line--3 {
   width: 22px;
   top: 67%;
   left: 57%;
@@ -42,7 +42,7 @@
   transition: width 0.3s, rotate 0.3s;
 }
 
-.toggle-burger:not(.toggle-burger--open):hover .toggle-burger--line2 {
+.toggle-burger:not(.toggle-burger--open):hover .toggle-burger__line--2 {
   width: 10px;
   transition: width 0.3s;
 }
@@ -59,10 +59,10 @@
   transition: background-color 0.3s, width 0.3s, rotate 0.3s;
 }
 
-.toggle-burger--line1 {
+.toggle-burger__line--1 {
   top: 42%;
 }
 
-.toggle-burger--line3 {
+.toggle-burger__line--3 {
   top: 58%;
 }
