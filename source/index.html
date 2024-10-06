@@ -844,7 +844,59 @@
         </div>
       </section>
 
-      <div data-test="form">form</div>
+      <section class="form" data-test="form">
+
+        <div class="form__container">
+
+          <div class="form__wrapper">
+            <h2 class="form__title">Напишите нам</h2>
+            <p class="form__text">Оставьте ваши контакты, если у вас остались вопросы — мы на них ответим!</p>
+
+            <form class="form__form" action="https://echo.htmlacademy.ru" method="post">
+              <label class="form__label" for="form-name">Имя</label>
+              <input class="form__input" type="text" name="form-name" id="form-name" required>
+
+              <label class="form__label form__label--phone" for="form-phone">Телефон</label>
+              <input class="form__input form__input--phone" type="number" name="form-phone" id="form-phone" required>
+
+              <label class="form__label form__label--textarea" for="form-message">Ваше сообщение</label>
+              <textarea class="form__input form__input--textarea" name="form-message" id="form-message" required></textarea>
+
+              <label class="form__label" for="city">Выберите город</label>
+              <div class="form__select-wrapper">
+
+                <select class="form__select" name="form-city" id="form-city">
+                  <option class="form__option" value="empty" tabindex="-1" aria-hidden="true" selected></option>
+                  <option class="form__option" value="Saint-Petersburg" tabindex="-1" aria-hidden="true">Санкт-Петербург</option>
+                  <option class="form__option" value="Vyborg" tabindex="-1" aria-hidden="true">Выборг</option>
+                  <option class="form__option" value="Salou" tabindex="-1" aria-hidden="true">Салоу</option>
+                  <option class="form__option" value="Moscow" tabindex="-1" aria-hidden="true">Москва</option>
+                  <option class="form__option" value="Petrozavodsk" tabindex="-1" aria-hidden="true">Петрозаводск</option>
+                </select>
+
+                <ul class="form__list form__list--close form__list--hide">
+                  <li class="form__item form__item--active" data-name="empty"></li>
+                  <li class="form__item" data-name="Saint-Petersburg" tabindex="0">Санкт-Петербург</li>
+                  <li class="form__item" data-name="Vyborg" tabindex="0">Выборг</li>
+                  <li class="form__item" data-name="Salou" tabindex="0">Салоу</li>
+                  <li class="form__item" data-name="Moscow" tabindex="0">Москва</li>
+                  <li class="form__item" data-name="Petrozavodsk" tabindex="0">Петрозаводск</li>
+                </ul>
+              </div>
+
+              <label class="form__label form__lable--checkbox">
+                <input class="form__control visually-hidden " type="checkbox" name="form-agree">
+                <span class="form__mark"></span>
+                <span class="form__control-label">Я согласен на обработку моих персональных<br> данных</span>
+              </label>
+
+              <button class="form__button button" type="submit">отправить</button>
+            </form>
+          </div>
+
+        </div>
+
+      </section>
     </main>
 
 
