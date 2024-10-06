@@ -1,0 +1,314 @@
+.form {
+  padding-top: 40px;
+}
+
+.form__container {
+  padding: 43px 10px 40px;
+  background:
+    image-set(
+      url("../../img/form/form-mobile@1x.webp") type("image/webp") 1x,
+      url("../../img/form/form-mobile@2x.webp") type("image/webp") 2x,
+      url("../../img/form/form-mobile@1x.jpg") type("image/jpeg") 1x,
+      url("../../img/form/form-mobile@2x.jpg") type("image/jpeg") 2x
+    );
+}
+
+.form__wrapper {
+  padding: 16px 15px 27px;
+  background-color: $primary;
+  border-radius: 16px;
+}
+
+.form__title {
+  margin: 0;
+  margin-bottom: 9px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.22;
+  color: $white;
+}
+
+.form__text {
+  margin: 0;
+  margin-bottom: 21px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  color: $beige;
+}
+
+.form__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  margin-bottom: 11px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  color: $beige;
+  opacity: 0.8;
+
+  @media ($tablet) {
+    margin-bottom: 16px;
+  }
+}
+
+.form__input {
+  margin-bottom: 21px;
+  padding: 16px 25px;
+  font-family: $basic-font;
+  color: $white;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  transition: border-color 0.3s;
+
+  &--textarea {
+    min-height: 94px;
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:active {
+    border-color: $white;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+
+  &:disabled {
+    background: rgba(169, 175, 183, 0.2);
+    border: 1px solid rgba(169, 175, 183, 0.5);
+  }
+
+  &--error {
+    background: rgba(255, 94, 102, 0.2);
+    border-color: $state-error;
+  }
+
+  @media ($tablet) {
+    margin-bottom: 21px;
+    padding: 16px 25px;
+  }
+}
+
+.form__select-wrapper {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.form__select {
+  width: 260px;
+  margin-bottom: 5px;
+  padding: 14px 25px 15px;
+  font-family: $basic-font;
+  color: $white;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+
+  &--error {
+    background-color: rgba(255, 94, 102, 0.2);
+    border: 1px solid $state-error;
+  }
+
+  @media ($tablet) {
+    margin-bottom: 5px;
+    padding: 14px 25px 15px;
+  }
+}
+
+.form__option {
+  display: none;
+}
+
+.form__list {
+  @include list-resseting;
+
+  position: absolute;
+  top: calc(100% + 4px);
+  width: 260px;
+  height: 168px;
+  background-color: $white;
+  border: 1px solid $text;
+  border-radius: 8px;
+  overflow-y: scroll;
+  overscroll-behavior: none;
+  z-index: 3;
+  transition: height 0.3s;
+
+  @media ($tablet) {
+    width: 350px;
+  }
+}
+
+.form__list--close {
+  height: 0;
+  transition: height 0.3s;
+}
+
+.form__list--hide {
+  display: none;
+}
+
+.form__item {
+  padding: 14px 14px 14px 20px;
+  min-height: 42px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1;
+  color: $text;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &--active {
+    color: $white;
+    background-color: $primary;
+    transition: color 0.3s, background-color 0.3s;
+  }
+
+  &:not(.form__item--active):hover {
+    color: $primary;
+    transition: color 0.3s;
+  }
+
+  &:focus-visible,
+  &:active {
+    color: $white;
+    background-color: $primary;
+    transition: color 0.3s, background-color 0.3s;
+  }
+}
+
+.form__lable--checkbox {
+  display: grid;
+  width: 260px;
+  margin-bottom: 19px;
+  grid-template-columns: 20px 1fr;
+  gap: 10px;
+  cursor: pointer;
+
+  @media ($tablet) {
+    margin-bottom: 27px;
+  }
+}
+
+.form__control-label {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  color: $white;
+  opacity: 0.9;
+
+  @media ($tablet) {
+    align-self: center;
+  }
+}
+
+.form__mark {
+  position: relative;
+  top: -1px;
+  width: 20px;
+  height: 20px;
+  align-self: center;
+  grid-column: 1 / 2;
+  border: 1px solid rgb(255, 255, 255, 0.7);
+  background-color: transparent;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.form__control:checked + .form__mark {
+  position: relative;
+  background-color: $white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    mask-image: url("/__spritemap#sprite-mark-view");
+    mask-repeat: no-repeat;
+    background-color: $primary;
+    translate: -50% -50%;
+  }
+}
+
+.form__lable--checkbox:hover .form__mark:not(.form__mark--error),
+.form__lable--checkbox:focus-visible .form__mark:not(.form__mark--error) {
+  border-color: $white;
+  transition: border-color 0.3s;
+}
+
+.form__lable--checkbox:disabled {
+  border-color: $white;
+  background-color: rgb(255, 255, 255, 0.6);
+  transition: border-color 0.3s;
+}
+
+.form__lable--checkbox:hover .form__control:checked + .form__mark,
+.form__lable--checkbox:focus-visible .form__control:checked + .form__mark {
+  background-color: transparent;
+  transition: background-color 0.3s;
+
+  &::before {
+    background-color: $white;
+    transition: background-color 0.3s;
+  }
+}
+
+.form__lable--checkbox:hover .form__control:checked + .form__mark:disabled {
+  background-color: $state-disabled;
+  transition: background-color 0.3s;
+
+  &::before {
+    background-color: rgb(255, 255, 255, 0.7);
+    transition: background-color 0.3s;
+  }
+}
+
+.form__mark--error {
+  background-color: rgba(255, 94, 102, 0.2);
+  border-color: $state-error;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.form__form:has(.form__input--phone:focus) .form__label--phone {
+  position: relative;
+
+  &::before {
+    content: "+7";
+    position: absolute;
+    bottom: -43px;
+    left: 7px;
+  }
+
+  @media ($tablet) {
+    &::before {
+      bottom: -48px;
+    }
+  }
+}
+
+.form__button {
+  width: 260px;
+  color: $white;
+  background-color: transparent;
+  border-color: $white;
+
+  &::before {
+    background-color: $white;
+  }
+
+  &::after {
+    background-color: $primary;
+  }
+
+  @media ($tablet) {
+    width: 195px;
+    margin: 0 auto;
+  }
+}
