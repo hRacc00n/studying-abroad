@@ -11,6 +11,12 @@
     gap: 25px 0;
     align-items: center;
   }
+
+  @media ($desktop) {
+    width: 1440px;
+    padding: 60px 100px 40px;
+    gap: 26px 0;
+  }
 }
 
 .footer__logo-container {
@@ -18,6 +24,10 @@
 
   @media ($tablet) {
     margin: 0 auto 0 0;
+  }
+
+  @media ($desktop) {
+    margin-right: 52px;
   }
 }
 
@@ -37,6 +47,12 @@
     margin: 0;
     gap: 15px;
   }
+
+  @media ($desktop) {
+    width: 603px;
+    margin-right: auto;
+    gap: 30px;
+  }
 }
 
 .footer__link {
@@ -50,6 +66,10 @@
     font-size: 16px;
     line-height: 20px;
   }
+
+  @media ($desktop) {
+    line-height: 1.62;
+  }
 }
 
 .footer__policy-container {
@@ -61,6 +81,13 @@
   @media ($tablet) {
     margin: 0 auto 0 0;
     gap: 11px;
+  }
+
+  @media ($desktop) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    order: 1;
   }
 }
 
@@ -78,6 +105,13 @@
     text-align: left;
     text-underline-offset: 3px;
   }
+
+  @media ($desktop) {
+    font-size: 14px;
+    line-height: 1.29;
+    text-underline-offset: 6px;
+    order: 1;
+  }
 }
 
 .footer__copyright {
@@ -87,6 +121,11 @@
   line-height: 1.17;
   color: rgb(72, 72, 72, 0.6);
   text-align: center;
+
+  @media ($desktop) {
+    font-size: 14px;
+    line-height: 1.29;
+  }
 }
 
 .footer__social-list {
@@ -101,6 +140,11 @@
     position: relative;
     top: -1px;
     width: 128px;
+  }
+
+  @media ($desktop) {
+    width: 148px;
+    gap: 20px;
   }
 }
 
