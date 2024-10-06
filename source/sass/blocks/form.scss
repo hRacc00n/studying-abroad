@@ -4,6 +4,10 @@
   @media ($tablet) {
     padding: 50px 58px;
   }
+
+  @media ($desktop) {
+    padding: 60px 100px;
+  }
 }
 
 .form__container {
@@ -33,6 +37,19 @@
     background-size: cover;
     border-radius: 16px;
   }
+
+  @media ($desktop) {
+    width: 1240px;
+    background:
+      image-set(
+        url("../../img/form/form-desktop@1x.webp") type("image/webp") 1x,
+        url("../../img/form/form-desktop@2x.webp") type("image/webp") 2x,
+        url("../../img/form/form-desktop@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/form/form-desktop@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .form__wrapper {
@@ -46,6 +63,11 @@
     width: 442px;
     margin: 0;
     padding: 41px 40px 36px;
+  }
+
+  @media ($desktop) {
+    width: 490px;
+    padding: 45px 70px 38px;
   }
 }
 
@@ -62,6 +84,12 @@
     font-size: 28px;
     line-height: 1;
   }
+
+  @media ($desktop) {
+    margin-bottom: 34px;
+    font-size: 32px;
+    line-height: 1.12;
+  }
 }
 
 .form__text {
@@ -76,6 +104,11 @@
     margin-bottom: 40px;
     font-size: 16px;
     line-height: 1.25;
+  }
+
+  @media ($desktop) {
+    margin-bottom: 38px;
+    line-height: 1.62;
   }
 }
 
@@ -96,6 +129,10 @@
     margin-bottom: 12px;
     font-size: 14px;
     line-height: 1.43;
+  }
+
+  @media ($desktop) {
+    margin-bottom: 11px;
   }
 }
 
@@ -139,22 +176,60 @@
       min-height: 88px;
     }
   }
+
+  @media ($desktop) {
+    margin-bottom: 19px;
+
+    &--textarea {
+      margin-bottom: 17px;
+      min-height: 90px;
+    }
+  }
 }
 
 .form__select-wrapper {
   position: relative;
   margin-bottom: 16px;
+
+  @media ($desktop) {
+    margin-bottom: 14px;
+  }
+}
+
+.form__select-wrapper::before {
+  content: "";
+  position: absolute;
+  right: 34px;
+  bottom: 29px;
+  width: 9px;
+  height: 9px;
+  rotate: -45deg;
+  border-left: 1px solid $white;
+  border-bottom: 1px solid $white;
+  transition: rotate 0.3s;
+
+  @media ($tablet) {
+    right: 24px;
+  }
+}
+
+.form__select-wrapper:has(.form__select--open)::before {
+  bottom: 27px;
+  rotate: 135deg;
+  transition: rotate 0.3s;
 }
 
 .form__select {
+  position: relative;
   width: 260px;
   margin-bottom: 5px;
-  padding: 14px 25px 15px;
+  padding: 17px 25px;
   font-family: $basic-font;
   color: $white;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
+  appearance: none;
 
   &--error {
     background-color: rgba(255, 94, 102, 0.2);
@@ -164,7 +239,7 @@
   @media ($tablet) {
     width: 100%;
     margin-bottom: 5px;
-    padding: 14px 25px 15px;
+    padding: 17px 25px;
   }
 }
 

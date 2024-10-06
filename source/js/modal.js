@@ -121,6 +121,7 @@ modalSelect.addEventListener('mousedown', (evt) => {
   evt.preventDefault();
   if (modalList.classList.contains('modal__list--hide')) {
     modalList.classList.remove('modal__list--hide');
+    modalSelect.classList.add('modal__select--open');
     setTimeout(() => {
       modalList.classList.remove('modal__list--close');
     }, 10);
@@ -132,6 +133,7 @@ modalSelect.addEventListener('keydown', (evt) => {
     evt.preventDefault();
     if (modalList.classList.contains('modal__list--hide')) {
       modalList.classList.remove('modal__list--hide');
+      modalSelect.classList.add('modal__select--open');
       setTimeout(() => {
         modalList.classList.remove('modal__list--close');
       }, 10);
@@ -147,6 +149,7 @@ modal.addEventListener('click', (evt) => {
       modalSelect.classList.remove('modal__select--error');
     }
     modalList.classList.add('modal__list--close');
+    modalSelect.classList.remove('modal__select--open');
     setTimeout(() => {
       modalList.classList.add('modal__list--hide');
     }, 250);

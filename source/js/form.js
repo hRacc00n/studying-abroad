@@ -91,6 +91,7 @@ formSelect.addEventListener('mousedown', (evt) => {
   evt.preventDefault();
   if (formList.classList.contains('form__list--hide')) {
     formList.classList.remove('form__list--hide');
+    formSelect.classList.add('form__select--open');
     setTimeout(() => {
       formList.classList.remove('form__list--close');
     }, 10);
@@ -102,6 +103,7 @@ formSelect.addEventListener('keydown', (evt) => {
     evt.preventDefault();
     if (formList.classList.contains('form__list--hide')) {
       formList.classList.remove('form__list--hide');
+      formSelect.classList.add('form__select--open');
       setTimeout(() => {
         formList.classList.remove('form__list--close');
       }, 10);
@@ -117,6 +119,7 @@ formBlock.addEventListener('click', (evt) => {
       formSelect.classList.remove('form__select--error');
     }
     formList.classList.add('form__list--close');
+    formSelect.classList.remove('form__select--open');
     setTimeout(() => {
       formList.classList.add('form__list--hide');
     }, 250);
