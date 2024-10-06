@@ -1,17 +1,17 @@
 .reviews__container {
   width: 320px;
   margin: 0 auto;
-  padding: 55px 15px;
+  padding: 55px 15px 50px;
 
   @media ($tablet) {
     width: 768px;
-    padding: 51px 163px 112px 45px;
+    padding: 51px 163px 111px 45px;
     overflow: hidden;
   }
 
   @media ($desktop) {
     width: 1440px;
-    padding: 65px 100px 122px;
+    padding: 65px 100px 52px;
   }
 }
 
