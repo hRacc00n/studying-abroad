@@ -2,10 +2,23 @@
   width: 320px;
   margin: 0 auto;
   padding: 40px 15px;
+
+  @media ($tablet) {
+    display: flex;
+    width: 768px;
+    padding: 41px 45px 36px;
+    flex-wrap: wrap;
+    gap: 25px 0;
+    align-items: center;
+  }
 }
 
 .footer__logo-container {
   margin: 0 auto 19px;
+
+  @media ($tablet) {
+    margin: 0 auto 0 0;
+  }
 }
 
 .footer__list {
@@ -16,6 +29,14 @@
   flex-wrap: wrap;
   gap: 17px 30px;
   justify-content: center;
+
+  @media ($tablet) {
+    position: relative;
+    left: -1px;
+    width: 528px;
+    margin: 0;
+    gap: 15px;
+  }
 }
 
 .footer__link {
@@ -24,6 +45,11 @@
   line-height: 1.43;
   color: $text;
   text-decoration: none;
+
+  @media ($tablet) {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }
 
 .footer__policy-container {
@@ -31,6 +57,11 @@
   margin-bottom: 14px;
   flex-direction: column;
   gap: 13px;
+
+  @media ($tablet) {
+    margin: 0 auto 0 0;
+    gap: 11px;
+  }
 }
 
 .footer__policy {
@@ -40,6 +71,13 @@
   color: $text;
   text-align: center;
   text-underline-offset: 4px;
+
+  @media ($tablet) {
+    position: relative;
+    top: -1px;
+    text-align: left;
+    text-underline-offset: 3px;
+  }
 }
 
 .footer__copyright {
@@ -58,6 +96,12 @@
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
+
+  @media ($tablet) {
+    position: relative;
+    top: -1px;
+    width: 128px;
+  }
 }
 
 .footer__social-link {
@@ -67,6 +111,11 @@
   height: 26px;
   background-color: $primary;
   border-radius: 50%;
+
+  @media ($tablet) {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .footer__social-link--vk::before {
@@ -80,6 +129,11 @@
   mask-repeat: no-repeat;
   background-color: $white;
   translate: -50% -50%;
+
+  @media ($tablet) {
+    width: 16px;
+    height: 9px;
+  }
 }
 
 .footer__social-link--odnoklassniki::before {
@@ -93,6 +147,11 @@
   mask-repeat: no-repeat;
   background-color: $white;
   translate: -50% -50%;
+
+  @media ($tablet) {
+    width: 10px;
+    height: 16px;
+  }
 }
 
 .footer__social-link--reddit::before {
@@ -106,4 +165,9 @@
   mask-repeat: no-repeat;
   background-color: $white;
   translate: -50% -50%;
+
+  @media ($tablet) {
+    width: 15px;
+    height: 16px;
+  }
 }
