@@ -1,5 +1,13 @@
 .form {
   padding-top: 40px;
+
+  @media ($tablet) {
+    padding: 50px 58px;
+  }
+
+  @media ($desktop) {
+    padding: 60px 100px;
+  }
 }
 
 .form__container {
@@ -11,12 +19,56 @@
       url("../../img/form/form-mobile@1x.jpg") type("image/jpeg") 1x,
       url("../../img/form/form-mobile@2x.jpg") type("image/jpeg") 2x
     );
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media ($tablet) {
+    width: 652px;
+    margin: 0 auto;
+    padding: 0;
+    background:
+      image-set(
+        url("../../img/form/form-tablet@1x.webp") type("image/webp") 1x,
+        url("../../img/form/form-tablet@2x.webp") type("image/webp") 2x,
+        url("../../img/form/form-tablet@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/form/form-tablet@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 16px;
+  }
+
+  @media ($desktop) {
+    width: 1240px;
+    background:
+      image-set(
+        url("../../img/form/form-desktop@1x.webp") type("image/webp") 1x,
+        url("../../img/form/form-desktop@2x.webp") type("image/webp") 2x,
+        url("../../img/form/form-desktop@1x.jpg") type("image/jpeg") 1x,
+        url("../../img/form/form-desktop@2x.jpg") type("image/jpeg") 2x
+      );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .form__wrapper {
+  width: 300px;
+  margin: 0 auto;
   padding: 16px 15px 27px;
   background-color: $primary;
   border-radius: 16px;
+
+  @media ($tablet) {
+    width: 442px;
+    margin: 0;
+    padding: 41px 40px 36px;
+  }
+
+  @media ($desktop) {
+    width: 490px;
+    padding: 45px 70px 38px;
+  }
 }
 
 .form__title {
@@ -26,6 +78,18 @@
   font-weight: 400;
   line-height: 1.22;
   color: $white;
+
+  @media ($tablet) {
+    margin-bottom: 31px;
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  @media ($desktop) {
+    margin-bottom: 34px;
+    font-size: 32px;
+    line-height: 1.12;
+  }
 }
 
 .form__text {
@@ -35,6 +99,17 @@
   font-weight: 400;
   line-height: 1.43;
   color: $beige;
+
+  @media ($tablet) {
+    margin-bottom: 40px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  @media ($desktop) {
+    margin-bottom: 38px;
+    line-height: 1.62;
+  }
 }
 
 .form__form {
@@ -51,7 +126,13 @@
   opacity: 0.8;
 
   @media ($tablet) {
-    margin-bottom: 16px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    line-height: 1.43;
+  }
+
+  @media ($desktop) {
+    margin-bottom: 11px;
   }
 }
 
@@ -88,25 +169,67 @@
   }
 
   @media ($tablet) {
-    margin-bottom: 21px;
+    margin-bottom: 20px;
     padding: 16px 25px;
+
+    &--textarea {
+      min-height: 88px;
+    }
+  }
+
+  @media ($desktop) {
+    margin-bottom: 19px;
+
+    &--textarea {
+      margin-bottom: 17px;
+      min-height: 90px;
+    }
   }
 }
 
 .form__select-wrapper {
   position: relative;
   margin-bottom: 16px;
+
+  @media ($desktop) {
+    margin-bottom: 14px;
+  }
+}
+
+.form__select-wrapper::before {
+  content: "";
+  position: absolute;
+  right: 34px;
+  bottom: 29px;
+  width: 9px;
+  height: 9px;
+  rotate: -45deg;
+  border-left: 1px solid $white;
+  border-bottom: 1px solid $white;
+  transition: rotate 0.3s;
+
+  @media ($tablet) {
+    right: 24px;
+  }
+}
+
+.form__select-wrapper:has(.form__select--open)::before {
+  bottom: 27px;
+  rotate: 135deg;
+  transition: rotate 0.3s;
 }
 
 .form__select {
+  position: relative;
   width: 260px;
   margin-bottom: 5px;
-  padding: 14px 25px 15px;
+  padding: 17px 25px;
   font-family: $basic-font;
   color: $white;
   background-color: transparent;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 8px;
+  appearance: none;
 
   &--error {
     background-color: rgba(255, 94, 102, 0.2);
@@ -114,8 +237,9 @@
   }
 
   @media ($tablet) {
+    width: 100%;
     margin-bottom: 5px;
-    padding: 14px 25px 15px;
+    padding: 17px 25px;
   }
 }
 
@@ -139,7 +263,7 @@
   transition: height 0.3s;
 
   @media ($tablet) {
-    width: 350px;
+    width: 100%;
   }
 }
 
@@ -190,7 +314,8 @@
   cursor: pointer;
 
   @media ($tablet) {
-    margin-bottom: 27px;
+    width: 100%;
+    margin-bottom: 39px;
   }
 }
 
@@ -206,6 +331,12 @@
   }
 }
 
+.form__control-label br {
+  @media ($tablet) {
+    display: none;
+  }
+}
+
 .form__mark {
   position: relative;
   top: -1px;
@@ -214,7 +345,7 @@
   align-self: center;
   grid-column: 1 / 2;
   border: 1px solid rgb(255, 255, 255, 0.7);
-  background-color: transparent;
+  background-color: $white;
   border-radius: 2px;
   transition: all 0.3s;
 }
@@ -308,7 +439,9 @@
   }
 
   @media ($tablet) {
-    width: 195px;
+    position: relative;
+    left: -5px;
+    width: 352px;
     margin: 0 auto;
   }
 }
