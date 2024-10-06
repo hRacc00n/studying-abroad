@@ -1,7 +1,3 @@
-// https://swiperjs.com/get-started#installation
-// import Swiper from "swiper";
-// import {Navigation, Pagination} from "swiper/modules";
-// import 'swiper/css';
 import { onSubmitSendInfo } from './form';
 import { openModal } from './modal';
 import { onButtonBurgerOpenMenu } from './on-button-burger-open-menu';

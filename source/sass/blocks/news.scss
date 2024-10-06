@@ -1,4 +1,5 @@
 .news__container {
+  position: relative;
   width: 320px;
   margin: 0 auto;
   padding: 0 15px 11px;
@@ -522,34 +523,51 @@
   align-self: center;
 }
 
-.news__pagination.swiper-pagination.swiper-pagination-bullets.swiper-pagination-horizontal.swiper-pagination-bullets-dynamic {
-  top: auto;
-  right: auto;
-  bottom: 39px;
-  left: 111px;
+.news__paginations.swiper-pagination {
+  bottom: 47px;
+  width: 290px;
+  justify-content: space-between;
+
+  @media ($tablet) {
+    width: 678px;
+  }
+
+  @media ($desktop) {
+    bottom: 59px;
+    width: 1240px;
+  }
 }
 
-.news__pagination.swiper-pagination > .button-swipe.swiper-pagination-bullet,
-.news__pagination.swiper-pagination > .button-swipe.swiper-pagination-bullet.swiper-pagination-bullet-active-next,
-.news__pagination.swiper-pagination > .button-swipe.swiper-pagination-bullet.swiper-pagination-bullet-active-prev,
-.news__pagination.swiper-pagination > .button-swipe.swiper-pagination-bullet.swiper-pagination-bullet-active-next-next {
+.news__navigations.swiper-pagination.swiper-pagination-horizontal {
+  display: flex;
+  position: absolute;
+  bottom: 49px;
+  left: 50%;
+  width: 152px;
+  height: 26px;
+  flex-wrap: wrap;
+  gap: 16px;
+  translate: -50% 0;
+  overflow: hidden;
+}
+
+.news__navigations.swiper-pagination.swiper-pagination-clickable > .news__bullet.swiper-pagination-bullet {
   width: 26px;
   height: 26px;
   margin: 0;
-  margin-right: 16px;
   font-family: $basic-font;
   font-size: 14px;
   font-weight: 500;
   line-height: 1;
-  color: rgb(49, 109, 194, 0.5);
+  text-transform: uppercase;
   text-align: center;
+  color: rgb(49, 109, 194, 0.9);
   background-color: transparent;
-  border-radius: 50%;
-  transform: scale(1);
-  opacity: 1;
+  border: 2px solid transparent;
 }
 
-.button-swipe.swiper-pagination-bullet.swiper-pagination-bullet-active.swiper-pagination-bullet-active-main {
+.news__navigations.swiper-pagination.swiper-pagination-clickable > .news__bullet.swiper-pagination-bullet.swiper-pagination-bullet-active {
   color: $white;
   background-color: $primary;
+  border-color: $primary;
 }

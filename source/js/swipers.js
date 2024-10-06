@@ -94,17 +94,19 @@ const swiperNewsHeader = new Swiper('.news__header-swiper', {
 });
 
 const swiperNews = new Swiper('.news__swiper', {
-  modules: [Grid, Pagination],
+  modules: [Grid, Pagination, Navigation],
   pagination: {
-    el: '.news__pagination',
-    dynamicBullets: true,
-    dynamicMainBullets: 2,
+    el: '.news__navigations',
     clickable: true,
     renderBullet: function(index) {
-      return `<button class="button-swipe button-swipe--${index + 1} swiper-pagination-bullet" type="button">
+      return `<button class="news__bullet news__bullet--${index + 1} swiper-pagination-bullet" data-id="${index + 1}" type="button">
                 <span class="visually-hidden">Перейти к слайду №</span> ${index + 1}
               </button>`;
     },
+  },
+  navigation: {
+    prevEl: '.news__pagination-button--prev',
+    nextEl: '.news__pagination-button--next',
   },
   breakpoints: {
     320: {
@@ -131,6 +133,58 @@ const swiperNews = new Swiper('.news__swiper', {
       spaceBetween: 32,
     }
   }
+});
+
+const newsBlock = document.querySelector('.news');
+const newsButtons = newsBlock.querySelectorAll('.news__bullet');
+
+console.log(newsButtons.length);
+
+
+newsBlock.addEventListener('mousedown', () => {
+  setTimeout(() => {
+    const newsButtonActive = newsBlock.querySelector('.swiper-pagination-bullet-active');
+    const currentIndex = newsButtonActive.dataset.id;
+    if (currentIndex < 4) {
+      newsButtons.forEach((bullet, index) => {
+        if (index > 3) {
+          bullet.style.display = 'none';
+        } else {
+          bullet.style.display = 'block';
+        }
+      });
+    }
+    if (currentIndex > 3) {
+      newsButtons.forEach((bullet, index) => {
+        if (index === currentIndex - 3 ||
+            index === currentIndex - 2 ||
+            index === currentIndex - 1 ||
+            index === Number(currentIndex)
+        ) {
+          bullet.style.display = 'block';
+        } else {
+          bullet.style.display = 'none';
+        }
+      });
+    }
+    if (Number(currentIndex) === Number(newsButtons.length)) {
+      newsButtons.forEach((bullet, index) => {
+
+        if (index === currentIndex - 4 ||
+            index === currentIndex - 3 ||
+            index === currentIndex - 2 ||
+            index === Number(currentIndex - 1)
+        ) {
+
+          bullet.style.display = 'block';
+        } else {
+          bullet.style.display = 'none';
+        }
+      });
+    }
+  }, 200);
+
+
 });
 
 const swiperReviews = new Swiper('.reviews__swiper', {
