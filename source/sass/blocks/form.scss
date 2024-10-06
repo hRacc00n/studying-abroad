@@ -188,6 +188,11 @@
   }
 }
 
+.form__input--phone::-webkit-outer-spin-button,
+.form__input--phone::-webkit-inner-spin-button {
+  appearance: none;
+}
+
 .form__select-wrapper {
   position: relative;
   margin-bottom: 16px;

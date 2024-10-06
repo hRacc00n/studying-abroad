@@ -5,16 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Internship</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicons/32.png">
+    <link rel="apple-touch-icon" href="favicons/apple.png">
+    <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="sass/style.scss">
   </head>
 
   <body class="page-body">
-    <!-- пример использования спрайта -->
-    <!-- <img src="/__spritemap#sprite-logo-view" alt="Это спрайт">
-    <svg>
-      <use href="/__spritemap#sprite-user"></use>
-    </svg> -->
-    <!-- примеры требуемых атрибутов data-test="*" -->
 
     <header class="header" data-test="hero">
       <div class="header__container">
@@ -64,42 +62,42 @@
             </li>
 
             <li class="header__item">
-              <a class="header__link" href="#">как поехать</a>
+              <a class="header__link" href="#grant">как поехать</a>
             </li>
 
             <li class="header__item">
-              <a class="header__link" href="#">отзывы</a>
+              <a class="header__link" href="#reviews">отзывы</a>
             </li>
 
             <li class="header__item header__item--submenu">
-              <a class="header__link header__link--submenu" href="#">новости</a>
+              <a class="header__link header__link--submenu" href="#news">новости</a>
 
               <ul class="header__submenu">
                 <li class="header__subitem">
-                  <a class="header__link" href="#">общее</a>
+                  <a class="header__link" href="#news">общее</a>
                 </li>
 
                 <li class="header__subitem">
-                  <a class="header__link" href="#">Волонтёрство</a>
+                  <a class="header__link" href="#news">Волонтёрство</a>
                 </li>
 
                 <li class="header__subitem">
-                  <a class="header__link" href="#">Стажировки</a>
+                  <a class="header__link" href="#news">Стажировки</a>
                 </li>
 
                 <li class="header__subitem">
-                  <a class="header__link" href="#">Карьера</a>
+                  <a class="header__link" href="#news">Карьера</a>
                 </li>
 
                 <li class="header__subitem">
-                  <a class="header__link" href="#">путешествия</a>
+                  <a class="header__link" href="#news">путешествия</a>
                 </li>
               </ul>
 
             </li>
 
             <li class="header__item">
-              <a class="header__link" href="#">контакты</a>
+              <a class="header__link" href="#contacts">контакты</a>
             </li>
 
           </ul>
@@ -108,6 +106,7 @@
 
         <div class="header__hero hero">
           <div class="hero__swiper swiper">
+            <h1 class="visually-hidden">Обучение и волонтерство заграницей</h1>
             <ul class="hero__wrapper swiper-wrapper">
 
               <li class="hero__swiper-slide hero__swiper-slide--experience swiper-slide">
@@ -337,7 +336,7 @@
         </div>
       </section>
 
-      <section class="grant" data-test="grant">
+      <section class="grant" id="grant" data-test="grant">
 
         <div class="grant__container">
 
@@ -387,7 +386,7 @@
 
       </section>
 
-      <section class="news" data-test="news">
+      <section class="news" id="news" data-test="news">
         <div class="news__container">
 
           <div class="news__header news__header-swiper swiper">
@@ -616,7 +615,7 @@
         </div>
       </section>
 
-      <section class="faq" data-test="FAQ">
+      <section class="faq" id="faq" data-test="FAQ">
         <div class="faq__container">
           <h2 class="faq__title">Вопросы и ответы</h2>
 
@@ -676,7 +675,7 @@
         </div>
       </section>
 
-      <section class="reviews" data-test="reviews">
+      <section class="reviews" id="reviews" data-test="reviews">
 
         <div class="reviews__container">
 
@@ -806,7 +805,7 @@
 
       </section>
 
-      <section class="contacts" data-test="contacts">
+      <section class="contacts" id="contacts" data-test="contacts">
         <div class="contacts__container">
 
           <div class="contacts__info">
@@ -910,22 +909,22 @@
 
         <ul class="footer__list">
           <li class="footer__item">
-            <a class="footer__link" href="#">О проекте</a>
+            <a class="footer__link" href="#about">О проекте</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="#">Программы</a>
+            <a class="footer__link" href="#programs">Программы</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="#">Как поехать</a>
+            <a class="footer__link" href="#grant">Как поехать</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="#">Отзывы</a>
+            <a class="footer__link" href="#reviews">Отзывы</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="#">Новости</a>
+            <a class="footer__link" href="#news">Новости</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="#">Контакты</a>
+            <a class="footer__link" href="#contacts">Контакты</a>
           </li>
         </ul>
 
@@ -936,17 +935,17 @@
 
         <ul class="footer__social-list">
           <li class="footer__social-item">
-            <a class="footer__social-link footer__social-link--vk" href="#">
+            <a class="footer__social-link footer__social-link--vk" href="https://vk.com/h.raccoon" rel="noreferrer noopener" target="_blank">
               <span class="visually-hidden">Перейти в Вконтакте</span>
             </a>
           </li>
           <li class="footer__social-item">
-            <a class="footer__social-link footer__social-link--odnoklassniki" href="#">
+            <a class="footer__social-link footer__social-link--odnoklassniki" href="https://t.me/hRaccoon" rel="noreferrer noopener" target="_blank">
               <span class="visually-hidden">Перейти в Одноклассники</span>
             </a>
           </li>
           <li class="footer__social-item">
-            <a class="footer__social-link footer__social-link--reddit" href="#">
+            <a class="footer__social-link footer__social-link--reddit" href="https://github.com/hRacc00n" rel="noreferrer noopener" target="_blank">
               <span class="visually-hidden">Перейти в реддит</span>
             </a>
           </li>

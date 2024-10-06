@@ -189,6 +189,11 @@
   }
 }
 
+.modal__input--phone::-webkit-outer-spin-button,
+.modal__input--phone::-webkit-inner-spin-button {
+  appearance: none;
+}
+
 .modal__select-wrapper {
   position: relative;
   margin-bottom: 16px;
