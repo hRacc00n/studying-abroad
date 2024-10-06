@@ -806,7 +806,44 @@
 
       </section>
 
-      <div data-test="contacts">contacts</div>
+      <section class="contacts" data-test="contacts">
+        <div class="contacts__container">
+
+          <div class="contacts__info">
+            <h2 class="contacts__title">Контакты</h2>
+
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <h3 class="contacts__info-title">центральный офис</h3>
+                <a class="contacts__link" href="https://yandex.ru/maps/-/CDThJJIq">г. Новосибирск, ул. Щетинкина 68, культурный центр</a>
+              </li>
+
+              <li class="contacts__item">
+                <h3 class="contacts__info-title">Телефон</h3>
+                <a class="contacts__link" href="tel:896387687676">+7 963 876 876 76</a>
+              </li>
+
+              <li class="contacts__item">
+                <h3 class="contacts__info-title">Email</h3>
+                <a class="contacts__link" href="mailto:Info@stazh.ru">Info@stazh.ru</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="contacts__map">
+            <picture>
+              <source type="image/webp" media="(min-width: 1440px)" srcset="img/contacts/map-desktop@1x.webp 1x, img/contacts/map-desktop@2x.webp 2x" width="1240" height="486">
+              <source type="image/webp" media="(min-width: 768px)" srcset="img/contacts/map-tablet@1x.webp 1x, img/contacts/map-tablet@2x.webp 2x" width="678" height="500">
+              <source type="image/webp" srcset="img/contacts/map-mobile@1x.webp 1x, img/contacts/map-mobile@2x.webp 2x" width="290" height="240">
+              <source type="image/png" media="(min-width: 1440px)" srcset="img/contacts/map-desktop@1x.png 1x, img/contacts/map-desktop@2x.png 2x" width="1240" height="486">
+              <source type="image/png" media="(min-width: 768px)" srcset="img/contacts/map-tablet@1x.png 1x, img/contacts/map-tablet@2x.png 2x" width="678" height="500">
+              <img src="img/contacts/map-mobile@1x.png" srcset="img/contacts/map-mobile@2x.png 2x" alt="г. Новосибирск, ул. Щетинкина 68, культурный центр" width="290" height="240">
+            </picture>
+          </div>
+
+        </div>
+      </section>
+
       <div data-test="form">form</div>
     </main>
 

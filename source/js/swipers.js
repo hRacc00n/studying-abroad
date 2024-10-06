@@ -162,4 +162,4 @@ const swiperReviews = new Swiper('.reviews__swiper', {
   }
 });
 
-export { swiperHero, swiperPrograms, swiperNewsHeader };
+export { swiperHero, swiperPrograms, swiperNewsHeader, swiperNews, swiperReviews };
