@@ -171,12 +171,6 @@
   }
 }
 
-.news__swiper-slide.swiper-slide {
-  // display: flex;
-  // flex-direction: column;
-  // gap: 20px;
-}
-
 .news__swiper-wrapper.swiper-wrapper > .news__swiper-slide.swiper-slide.swiper-slide-active {
   @media ($desktop) {
     min-width: 604px;

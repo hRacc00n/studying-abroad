@@ -1,10 +1,6 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Scrollbar, Grid } from 'swiper/modules';
 import 'swiper/css/bundle';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
-// import 'swiper/css/grid';
 import { heroWrapper } from './variables';
 
 const swiperHero = new Swiper('.hero__swiper', {
