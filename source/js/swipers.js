@@ -108,6 +108,7 @@ const swiperNews = new Swiper('.news__swiper', {
     prevEl: '.news__pagination-button--prev',
     nextEl: '.news__pagination-button--next',
   },
+  simulateTouch: false,
   breakpoints: {
     320: {
       grid: {
@@ -138,9 +139,6 @@ const swiperNews = new Swiper('.news__swiper', {
 const newsBlock = document.querySelector('.news');
 const newsButtons = newsBlock.querySelectorAll('.news__bullet');
 
-console.log(newsButtons.length);
-
-
 newsBlock.addEventListener('mousedown', () => {
   setTimeout(() => {
     const newsButtonActive = newsBlock.querySelector('.swiper-pagination-bullet-active');
@@ -156,11 +154,7 @@ newsBlock.addEventListener('mousedown', () => {
     }
     if (currentIndex > 3) {
       newsButtons.forEach((bullet, index) => {
-        if (index === currentIndex - 3 ||
-            index === currentIndex - 2 ||
-            index === currentIndex - 1 ||
-            index === Number(currentIndex)
-        ) {
+        if (index >= currentIndex - 3 && index <= currentIndex) {
           bullet.style.display = 'block';
         } else {
           bullet.style.display = 'none';
@@ -169,13 +163,7 @@ newsBlock.addEventListener('mousedown', () => {
     }
     if (Number(currentIndex) === Number(newsButtons.length)) {
       newsButtons.forEach((bullet, index) => {
-
-        if (index === currentIndex - 4 ||
-            index === currentIndex - 3 ||
-            index === currentIndex - 2 ||
-            index === Number(currentIndex - 1)
-        ) {
-
+        if (index >= currentIndex - 4 && index <= currentIndex - 1) {
           bullet.style.display = 'block';
         } else {
           bullet.style.display = 'none';

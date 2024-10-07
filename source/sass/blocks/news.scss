@@ -549,6 +549,17 @@
   gap: 16px;
   translate: -50% 0;
   overflow: hidden;
+
+  @media ($tablet) {
+    bottom: 50px;
+    width: 188px;
+    height: 32px;
+    gap: 20px;
+  }
+
+  @media ($desktop) {
+    bottom: 60px;
+  }
 }
 
 .news__navigations.swiper-pagination.swiper-pagination-clickable > .news__bullet.swiper-pagination-bullet {
@@ -564,6 +575,11 @@
   color: rgb(49, 109, 194, 0.9);
   background-color: transparent;
   border: 2px solid transparent;
+
+  @media ($tablet) {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .news__navigations.swiper-pagination.swiper-pagination-clickable > .news__bullet.swiper-pagination-bullet.swiper-pagination-bullet-active {
